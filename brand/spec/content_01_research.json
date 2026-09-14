@@ -1,0 +1,290 @@
+{
+  "page": "01 Research & Sources",
+  "meta": {
+    "brand": "Synaptix · 시넵틱스",
+    "accessed": "2026-09-14",
+    "language_order": ["ko", "en"],
+    "note": "KO first, EN equivalent. [n] = numbered source in section s10. '≈' = approximate colour. '미확인 / not observed' = page not rendered."
+  },
+  "sections": [
+    {
+      "id": "s1",
+      "title": { "ko": "연구 개요", "en": "Research overview" },
+      "kicker": { "ko": "01 · 무엇을, 어떻게 조사했나", "en": "01 · What we studied and how" },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "ko": "2026-09-14 기준으로 기존 아이덴티티, 경쟁·참조 브랜드 8곳, 타이포·접근성·신뢰 문헌을 조사해 브랜드 시스템 2.0의 근거를 마련했습니다.",
+          "en": "As of 2026-09-14 we audited the existing identity, eight competitor and reference brands, and the typography, accessibility and credibility literature that underpins Brand System 2.0."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            { "ko": "범위: Google Drive, Figma 계정, 로컬 저장소, 공개 웹(검색·공식 블로그·언론)", "en": "Scope: Google Drive, the Figma account, the local repo and the public web (search, official blogs, press)" },
+            { "ko": "경쟁사: 직접 5 (스마트닥터, 닥터팔레트, Pabau, Nextech, Jane) · 인접 3 (채널톡, 토스, 강남언니)", "en": "Competitors: 5 direct (Smart Doctor, Dr.Palette, Pabau, Nextech, Jane) · 3 adjacent (Channel Talk, Toss, Gangnam Unni)" },
+            { "ko": "문헌: 서체 라이선스와 Figma 가용성, 한글 가독성, WCAG 2.2·KWCAG 2.2, 신뢰성 연구, 의료광고 규제", "en": "Literature: font licences and Figma availability, Hangul readability, WCAG/KWCAG 2.2, credibility, medical-ad law" },
+            { "ko": "표기 원칙: 확인된 사실은 [n] 출처, 추정은 '가설', 관측 못 한 항목은 '미확인'으로 명시", "en": "Labelling: verified facts carry an [n] source, inferences are marked 'hypothesis', unseen items 'not observed'" }
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "limitation",
+          "ko": "샌드박스 프록시가 대부분의 공식 페이지를 차단해 검색 스니펫과 2차 보도에 기댄 발견이 많습니다. 시각 속성은 라이브 브라우저에서 재검증해야 합니다.",
+          "en": "The sandbox proxy blocked most official pages, so many findings rest on search snippets and secondary coverage. Visual attributes must be re-verified in a live browser."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "title": { "ko": "기존 아이덴티티 감사", "en": "Existing identity audit" },
+      "kicker": { "ko": "02 · 무엇이 있었고, 무엇이 바뀌나", "en": "02 · What existed, what changes" },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "ko": "공개된 시넵틱스 브랜드 시스템, 로고, 사이트, 앱, 메시지 문서는 어디에도 없었습니다. 유일한 내부 자료는 Drive 폴더 'Skinclinic-WA Leads & Outreach'입니다.",
+          "en": "No public Synaptix brand system, logo, site, app or messaging document exists anywhere. The only internal material is the Drive folder 'Skinclinic-WA Leads & Outreach'."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            { "ko": "존재한 것: 리드 시트 4개(강남권 클리닉 약 26곳)와 KO/EN 아웃리치 스크립트. 브랜드 자산은 없음", "en": "What existed: four lead sheets (~26 Gangnam-area clinics) and KO/EN outreach scripts. No brand assets" },
+            { "ko": "기존 포지셔닝: 'WhatsApp 접수·자격심사 툴' — 영어권 환자를 응대하는 코디네이터 대상", "en": "Prior positioning: 'the WhatsApp intake/qualification tool' for coordinators serving English-speaking patients" },
+            { "ko": "로고, 색, 서체, 이미지, 한글 워드마크 모두 미발견. 이름은 백지이지만 제3자와 혼잡함", "en": "Logo, colour, type, imagery and Hangul wordmark all absent. The name is a blank slate, but crowded by third parties" },
+            { "ko": "이름 충돌: Synaptics(시냅틱스), synaptix.dev, gosynaptix 등이 뇌·신경망·메시 이미지를 사용", "en": "Name collisions: Synaptics, synaptix.dev, gosynaptix and others use brain, neural and mesh imagery" },
+            { "ko": "변화 1 · 대상: 코디네이터 → 원장·실장. 한국어가 주 언어, 영어는 보조", "en": "Change 1 · Audience: coordinators → clinic directors and head managers. Korean primary, English secondary" },
+            { "ko": "변화 2 · 약속: 포인트 툴 → 접수부터 재방문까지 클리닉 전체를 하나의 시스템으로", "en": "Change 2 · Promise: a point tool → the whole clinic on one system, from reception to follow-up" },
+            { "ko": "변화 3 · 증거: 모듈 범위, 데이터 처리 명확성, 안정성 설계, 파일럿 클리닉이 필요. AI 우선 증거는 배제", "en": "Change 3 · Proof: module breadth, data-handling clarity, stability design and pilot clinics. No AI-first proof" },
+            { "ko": "변화 4 · 시각: 뇌·신경망 금지, 인프라처럼 차분하고 정밀하게, 한글 워드마크 동반 설계, 모듈형 시스템", "en": "Change 4 · Visual: no brain or neural imagery; calm, precise infrastructure; Hangul wordmark co-designed; modular system" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "title": { "ko": "경쟁사 매트릭스", "en": "Competitor matrix" },
+      "kicker": { "ko": "03 · 직접 5 + 인접 3", "en": "03 · 5 direct + 3 adjacent" },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "ko": "공식 페이지가 렌더되지 않아 시각 속성은 부분 관측입니다. '≈'는 근사값, '미확인'은 관측 실패를 뜻합니다.",
+          "en": "Official pages did not render, so visual attributes are partial. '≈' marks approximations; 'not observed' marks fields we could not see."
+        },
+        {
+          "type": "table",
+          "columns": ["브랜드 / Brand", "유형 / Type", "카테고리 언어 / Category label", "로고 형태 / Logo form", "주요 색 / Primary colour", "타이포 / Type style", "제품 표현 / Product presentation", "신뢰 신호 / Trust signals", "핵심 메시지 / Key message"],
+          "rows": [
+            ["스마트닥터 Smart Doctor", "직접 / direct", "의료 통합 플랫폼 · No.1 병원차트", "미확인 / not observed", "미확인 / not observed", "미확인 / not observed", "미확인 · 모듈 카탈로그 사이트 / module-catalogue site", "3,527 병원, 신규개원 3/4, 1983년부터 / since 1983", "연동으로 데스크 업무·인건비 절감 / integration cuts desk work"],
+            ["닥터팔레트 Doctor Palette", "직접 / direct", "클라우드 EMR · 꿈에 그리던 차트", "팔레트형 'p' 심볼, 둥근 끝 / palette 'p', rounded", "미확인 (다색 가설) / not observed (multi-hue hypothesis)", "미확인 / not observed", "모바일+웹 화면(문구만) / mobile + web (copy only)", "피부미용 EMR 1위 설문, ~150 의원 / ~150 clinics", "진정한 클라우드, 의사가 만든 차트 / true cloud, doctor-built"],
+            ["Pabau", "직접 / direct", "All-in-one practice management (clinics & med spas)", "미확인 / not observed", "미확인 / not observed", "미확인 / not observed", "미확인 / not observed", "4,000+ practices, 40+ countries, HIPAA/GDPR", "매출·LTV·마케팅, $62 시트 / revenue, LTV, $62 seat"],
+            ["Nextech", "직접 / direct", "Complete tech solution for specialty providers", "미확인 / not observed", "미확인 / not observed", "미확인 / not observed", "미확인 / not observed", "16k physicians, Best in KLAS, since 1997", "효율·성장·전문과 깊이, AI 스크라이브 / efficiency, growth, AI scribe"],
+            ["Jane", "직접 / direct", "Practice management for health & wellness", "곡선 컨테이너 안 워드마크 / wordmark in curved shape", "#00C1CA Jane Blue (공식 / published)", "Proxima Nova + Miller Display", "스크린샷 + 인물 사진 / screenshots + people photos", "240k practitioners, SOC 2, HIPAA/PIPEDA", "'helpful', 단순함, 커뮤니티 / helpful, simple, community"],
+            ["채널톡 Channel Talk", "인접 / adjacent", "올인원 AI 메신저", "입 모양 말풍선 심볼 / speech bubble with mouth", "≈#5E5CFF 채널블루 (근사 / approx)", "미확인 / not observed", "미확인 / not observed", "18만 기업, 22개국, 월 7천만 상담", "AI 에이전트 ALF, 채널 통합 / AI agent, unified channels"],
+            ["토스 Toss", "인접 / adjacent", "핀테크 슈퍼앱 / fintech super-app", "3D 뒤집힌 원형 심볼 + 로고타입 / 3D flipped circle", "≈#3182F6 Toss Blue (근사 / approx)", "Toss Product Sans (자체 / custom)", "흰 캔버스, 단일 파랑 액션, 3D 심볼 / white canvas, one blue", "엄격한 브랜드 규정 / strict brand rules", "자유롭게, 유연하게, 대담하게"],
+            ["강남언니 Gangnam Unni", "인접 / adjacent", "1등 성형·피부 정보앱 · 뷰티 내비게이터", "2026 리뉴얼, '간결한 형태' / refreshed 2026, concise", "미확인 / not observed", "미확인 / not observed", "미확인 / not observed", "4,900 병원, 950만 유저, 영수증 인증 후기", "내 선택에 확신을 / confidence in my choice"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "title": { "ko": "시각 비교", "en": "Visual comparison" },
+      "kicker": { "ko": "04 · 스와치 + 한 줄 인상", "en": "04 · Swatch + one-line read" },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "ko": "각 행은 색 스와치와 한 줄 시각 설명으로 렌더됩니다. hex가 null이면 '미확인' 스와치를 사용합니다.",
+          "en": "Each row renders as a colour swatch plus a one-line visual read. A null hex renders as a 'not observed' swatch."
+        },
+        {
+          "type": "bullets",
+          "render": "swatch_rows",
+          "items": [
+            { "brand": "스마트닥터 · Smart Doctor", "primary_color_hex": null, "approx": true, "logo_form": "미확인 / not observed", "ko": "시각 미관측. 텍스트 스니펫만 확인된 모듈 카탈로그형 사이트", "en": "Visuals not observed. Text-only snippets from a module-catalogue site" },
+            { "brand": "닥터팔레트 · Doctor Palette", "primary_color_hex": null, "approx": true, "logo_form": "팔레트형 'p' 심볼, 둥근 끝 / palette-shaped 'p', rounded terminals", "ko": "'Bright & Light' 팔레트 심볼, 둥글고 친근한 인상. 색값은 미확인(다색 가설)", "en": "'Bright & Light' palette symbol, round and friendly. Colour values not observed (multi-hue hypothesis)" },
+            { "brand": "Pabau", "primary_color_hex": null, "approx": true, "logo_form": "미확인 / not observed", "ko": "시각 미관측. 비교 SEO와 공개 시트 가격이 브랜드 표면", "en": "Visuals not observed. Comparison SEO and public seat pricing are the brand surface" },
+            { "brand": "Nextech", "primary_color_hex": null, "approx": true, "logo_form": "미확인 / not observed", "ko": "시각 미관측. 엔터프라이즈·수상(KLAS) 중심의 무게감", "en": "Visuals not observed. Enterprise, award-led (KLAS) gravitas" },
+            { "brand": "Jane", "primary_color_hex": "#00C1CA", "approx": false, "logo_form": "곡선 컨테이너 속 워드마크 / wordmark inside a curved container", "ko": "틸-시안 'Jane Blue', 산세리프 본문 + 세리프 제목, 따뜻한 인물 사진", "en": "Teal-cyan 'Jane Blue', sans body with serif headers, warm people photography" },
+            { "brand": "채널톡 · Channel Talk", "primary_color_hex": "#5E5CFF", "approx": true, "logo_form": "입 모양 말풍선 심볼 / speech bubble with mouth" , "ko": "파랑과 보라 사이 '채널블루', 캐릭터형 말풍선. hex는 근사값", "en": "Blue-violet 'Channel Blue', character-like speech bubble. Hex is approximate" },
+            { "brand": "토스 · Toss", "primary_color_hex": "#3182F6", "approx": true, "logo_form": "3D 뒤집힌 원형 심볼 + 로고타입 / 3D flipped-circle symbol + logotype", "ko": "흰 캔버스, 단일 토스블루 액션, 자체 서체. 한국 테크 신뢰의 기준점", "en": "White canvas, one Toss Blue action colour, custom typeface. The Korean-tech trust benchmark" },
+            { "brand": "강남언니 · Gangnam Unni", "primary_color_hex": null, "approx": true, "logo_form": "2026 리뉴얼, 간결·친근 / refreshed 2026, concise and friendly", "ko": "2026 전면 리브랜딩. '친근함 유지, 간결한 형태'. 색·서체 미확인", "en": "Full 2026 rebrand: 'keep friendly, simplify form'. Colour and type not observed" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "title": { "ko": "카테고리 관습", "en": "Category conventions" },
+      "kicker": { "ko": "05 · 모두가 하는 것", "en": "05 · What everyone does" },
+      "blocks": [
+        {
+          "type": "bullets",
+          "items": [
+            { "ko": "파랑이 기본 신뢰색: 토스 ≈#3182F6, 채널톡 ≈#5E5CFF. Jane의 틸만 예외", "en": "Blue is the default trust colour: Toss ≈#3182F6, Channel Talk ≈#5E5CFF. Jane's teal is the lone outlier" },
+            { "ko": "둥글고 친근한 지오메트릭 산세리프와 부드러운 심볼(말풍선, 팔레트, 곡선 워드마크)", "en": "Rounded, friendly geometric sans and soft symbols (speech bubble, palette, curved wordmark)" },
+            { "ko": "숫자 기반 증거: 3,527 병원 / 4,000+ practices / 16k physicians / 240k practitioners / 18만 기업", "en": "Count-based proof everywhere: 3,527 clinics / 4,000+ practices / 16k physicians / 240k practitioners" },
+            { "ko": "'올인원 / 통합 / 연동'이 카테고리 단어. 아무도 '운영체제'라고 말하지 않음", "en": "'All-in-one / integrated' is the category word. Nobody says 'operating system'" },
+            { "ko": "컴플라이언스 배지는 위생 요소일 뿐, 이야기로 쓰이지 않음", "en": "Compliance badges appear as hygiene, rarely as story" },
+            { "ko": "2025–26 헤드라인은 AI: Nextech Cora, Pabau AI notes, 채널톡 ALF, 닥터팔레트 AI 피부분석", "en": "AI is the 2025–26 headline: Nextech Cora, Pabau AI notes, Channel Talk ALF, Dr.Palette AI skin analysis" },
+            { "ko": "다크·에디토리얼 시각 체계를 쓰는 직접 경쟁사는 관측되지 않음", "en": "No direct competitor observed using a dark or editorial visual system" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "title": { "ko": "구매자 우려", "en": "Buyer concerns" },
+      "kicker": { "ko": "06 · 원장·실장이 걱정하는 것", "en": "06 · What directors and managers worry about" },
+      "blocks": [
+        {
+          "type": "bullets",
+          "heading": { "ko": "문서화된 발견", "en": "Documented" },
+          "items": [
+            { "ko": "EMR 선택 1순위는 '제품·회사 안정성' 48.16% (의사 1,030명) [3]", "en": "Stability is the #1 EMR selection criterion at 48.16% (n=1,030 physicians) [3]" },
+            { "ko": "클라우드 주저 요인: 보안 38.5%, 비용 22.07%, 검증 안 된 안정성 19.25%, 동료 사용 적음 6.42% [3]", "en": "Cloud hesitancy: security 38.5%, cost 22.07%, unproven stability 19.25%, few peers using it 6.42% [3]" },
+            { "ko": "클라우드 EMR 장벽(병원 직원 839명): 인터넷 장애 48.4%, 의료데이터 보안 37.6%, 커스텀 한계 30.3% [4]", "en": "Cloud-EMR barriers (n=839 staff): outage 48.4%, medical-data security 37.6%, customisation limits 30.3% [4]" },
+            { "ko": "2025년 일반의 개원의 85.3%가 피부과 표방, 강남에 50곳 — 과밀·가격 경쟁 [11]", "en": "85.3% of 2025 GP openings declared dermatology, 50 in Gangnam — crowded, price-eroding market [11]" },
+            { "ko": "외국인 환자 2025년 200만 명 돌파 — 이중 언어 준비가 성장 메시지 [12]", "en": "Foreign patients passed 2M in 2025 — bilingual readiness is a growth message [12]" },
+            { "ko": "의료법 56·57조: 치료경험담·과장 금지, 대규모 온라인 매체 광고는 사전심의 [18]", "en": "Medical Service Act Art. 56/57: no testimonials or exaggeration; pre-review for large online media [18]" },
+            { "ko": "알림톡은 정보성 전용. 광고성 문구는 (광고) 표기, 야간 제한, 2년 재동의 대상", "en": "알림톡 is informational only; promotional wording triggers (광고) labelling, night limits and 2-year re-consent" },
+            { "ko": "노쇼·당일취소 10–30% 수치는 벤더 블로그 출처뿐 — 사실로 인용하지 말 것", "en": "The 10–30% no-show figure comes only from a vendor blog — do not quote as fact" }
+          ]
+        },
+        {
+          "type": "bullets",
+          "heading": { "ko": "가설 (미검증)", "en": "Hypotheses (unverified)" },
+          "items": [
+            { "ko": "기존 벤더 락인과 차트 이관의 고통에 대한 두려움", "en": "Fear of vendor lock-in and painful chart migration from incumbents" },
+            { "ko": "상담실장 이직으로 CRM 메모와 패키지 잔여분이 끊기는 연속성 리스크", "en": "Counselor (상담실장) turnover makes CRM notes and package balances a continuity risk" },
+            { "ko": "카카오·네이버·인스타·WhatsApp·전화로 흩어진 문의 → 놓친 리드", "en": "Inquiry fragmentation across Kakao, Naver, Instagram, WhatsApp and phone → missed leads" },
+            { "ko": "피크 시간(주말·저녁) 다운타임 불안이 신기능 관심보다 큼", "en": "Peak-hour (weekend, evening) downtime anxiety outweighs interest in new features" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "title": { "ko": "차별화 기회", "en": "Differentiation opportunities" },
+      "kicker": { "ko": "07 · 비어 있는 자리", "en": "07 · The white space" },
+      "blocks": [
+        {
+          "type": "bullets",
+          "items": [
+            { "ko": "'클리닉 운영체제' 프레임은 아무도 쓰지 않음. 차트·CRM·플랫폼이 아닌 시스템 언어를 소유", "en": "'Clinic operating system' is unclaimed. Own systems-level language instead of chart, CRM or platform" },
+            { "ko": "신뢰성을 주인공으로: 안정성이 1순위 기준인데 누구도 상단에서 설계·절차로 답하지 않음", "en": "Reliability as the hero: stability is the top criterion, yet nobody answers it above the fold with design and process" },
+            { "ko": "비(非)파랑 시각 체계: 잉크 기반 다크 베이스 + 하나의 신호색은 이 집합에서 유일", "en": "A non-blue system: an ink-dark base with one signal colour is unique in this set" },
+            { "ko": "정밀 타이포: 둥근 친근함 대신 엔지니어드 그로테스크 + 고정폭 숫자 — 도구, 장난감 아님", "en": "Precision typography: an engineered grotesk with tabular numerals instead of rounded friendliness — instrument, not toy" },
+            { "ko": "실제 화면, 실제 밀도: 히어로 목업이 아니라 데스크·상담실 화면을 작업 밀도로", "en": "Real screens at working density rather than hero mockups" },
+            { "ko": "한국 미용 클리닉 어휘(상담실장, 비급여, 시술 패키지, 알림톡, 네이버예약)와 외국인 환자 대응", "en": "Korean aesthetic-clinic vocabulary (상담실장, 비급여, packages, 알림톡, Naver booking) plus foreign-patient readiness" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "title": { "ko": "디자인 시사점", "en": "Design implications" },
+      "kicker": { "ko": "08 · 연구가 시스템에 요구하는 것", "en": "08 · What the research asks of the system" },
+      "blocks": [
+        {
+          "type": "bullets",
+          "items": [
+            { "ko": "카테고리 명명: '클리닉 운영체제 / The clinic operating system'. 차트·CRM·플랫폼은 주 명사로 쓰지 않음", "en": "Name the category: 'The clinic operating system'. Do not lead with chart, CRM or platform" },
+            { "ko": "심볼은 구조적 시스템 마크: 두 점을 잇는 하나의 경로. 말풍선·팔레트·하트·신경망 메시 금지", "en": "A structural system mark: one path between two points. No bubble, palette, heart or neural mesh" },
+            { "ko": "잉크 950 다크 베이스 + 펄스 민트 신호색. 코발트는 상호작용색, 히어로가 아님", "en": "Ink 950 dark base with Pulse Mint as the signal. Cobalt is the interaction colour, not the hero" },
+            { "ko": "엔지니어드 그로테스크(IBM Plex Sans KR) + 고정폭 숫자(IBM Plex Mono). 둥근 끝 없음", "en": "Engineered grotesk (IBM Plex Sans KR) plus tabular mono numerals (IBM Plex Mono). No rounded terminals" },
+            { "ko": "숫자 시스템: 대시보드·카운트·상태를 같은 모노 타입으로 — 증거 층이 브랜드 요소가 됨", "en": "A numbers system: dashboards, counts and statuses in the same mono type — the proof layer becomes a brand asset" },
+            { "ko": "신뢰 섹션은 정직한 신호만: 보안 정책 보기, 도입 절차 안내. 가짜 업타임·인증·고객 수 금지", "en": "Trust sections use honest signals only: view security policy, see onboarding steps. No invented uptime, badges or counts" },
+            { "ko": "규제를 UI로: 정보성/광고성 메시지 상태, 동의 상태, 감사 로그를 아이콘과 라벨로 표현", "en": "Regulation as UI: informational/promotional message status, consent state and audit log as icons and labels" },
+            { "ko": "실제 클리닉 운영 사진, 잉크 오버레이. 스톡 미소·전후 사진·환자 얼굴 없음", "en": "Real clinic-operations photography with Ink overlay. No stock smiles, no before/after, no patient faces" },
+            { "ko": "모션은 즉각적·기계적: 150–350 ms, 연결을 보여주는 움직임, 바운스 없음, 감소 모션 존중", "en": "Motion is instant and mechanical: 150–350 ms, shows linking, no bounce, honours reduced motion" },
+            { "ko": "한국어 우선 카피: 선언적·짧게·구체적으로. 실제 숫자만, AI 버즈워드 없음", "en": "Korean-first copy: declarative, short, specific. Real numbers only, no AI buzzwords" },
+            { "ko": "첫날부터 KO/EN 이중 언어 락업 — 외국인 환자 준비를 시각적으로 신호", "en": "A KO/EN bilingual lockup from day one signals foreign-patient readiness" },
+            { "ko": "하나의 불변 브랜드색과 엄격한 로고 규칙(토스식 규율)으로 기관적 진지함을 투사", "en": "One immutable brand colour and a strict logo rule set (Toss-style discipline) project institutional seriousness" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "title": { "ko": "타이포·접근성·신뢰 연구 요약", "en": "Typography, accessibility & credibility" },
+      "kicker": { "ko": "09 · 문헌 발견", "en": "09 · Literature findings" },
+      "blocks": [
+        {
+          "type": "bullets",
+          "items": [
+            { "ko": "Pretendard는 SIL OFL이지만 Google Fonts에 없음 → Figma에서는 로컬 설치 필요 [13][15]", "en": "Pretendard is SIL OFL but not on Google Fonts → needs local install for Figma [13][15]" },
+            { "ko": "IBM Plex Sans KR + IBM Plex Mono는 한 저장소, 한 OFL 라이선스, Google Fonts 제공 [14]", "en": "IBM Plex Sans KR and IBM Plex Mono share one repo, one OFL licence and are on Google Fonts [14]" },
+            { "ko": "OFL 1.1: 상업 사용·웹 임베드·앱 번들 가능. 서체 단독 판매 금지, 수정본은 예약 이름 제한 [13][14]", "en": "OFL 1.1: commercial use, web embedding and app bundling allowed; no standalone sale; reserved font names apply [13][14]" },
+            { "ko": "한글 본문 행간은 1.5–1.6이 실무 표준(모바일 ≈155%). 라틴의 1.2–1.3보다 높음 — 국내 가이드 기반 가설", "en": "Hangul body line-height clusters at 1.5–1.6 (mobile ≈155%), above Latin's 1.2–1.3 — hypothesis from Korean guides" },
+            { "ko": "한국 제품 타이포는 약한 음수 자간(−0.2~−0.4px)이 관행. 작은 라벨은 0 — 실무 블로그 기반 가설", "en": "Slightly negative tracking (−0.2 to −0.4px) is the Korean product norm; 0 for small labels — hypothesis from blogs" },
+            { "ko": "혼합 한글/라틴 텍스트는 word-break: keep-all로 어절 단위 줄바꿈 (MDN)", "en": "Mixed Hangul/Latin text wraps at 어절 boundaries with word-break: keep-all (MDN)" },
+            { "ko": "대시보드 숫자는 tabular figures(tnum) + 우측 정렬. 값이 바뀌어도 열이 흔들리지 않음 (MDN)", "en": "Dashboard numerals use tabular figures (tnum) and right alignment so columns never jump (MDN)" },
+            { "ko": "WCAG 2.2 AA: 텍스트 4.5:1, 큰 텍스트 3:1; UI 요소·아이콘·차트 선은 3:1 [16]", "en": "WCAG 2.2 AA: text 4.5:1, large text 3:1; UI components, icons and chart lines 3:1 [16]" },
+            { "ko": "APCA는 WCAG 3 초안의 후보일 뿐. 품질 점검용으로만 쓰고 WCAG 2.x 비율을 기준으로 유지", "en": "APCA is only a WCAG 3 draft candidate. Use it as a quality check; WCAG 2.x ratios remain the baseline" },
+            { "ko": "KWCAG 2.2(KS X OT0003:2022): 대비 4.5:1, 색에 무관한 콘텐츠 인식 항목 별도 [17]", "en": "KWCAG 2.2 (KS X OT0003:2022): contrast 4.5:1 plus a separate colour-independent perception item [17]" },
+            { "ko": "상태색은 단독 단서가 될 수 없음(WCAG 1.4.1). 아이콘·라벨·형태를 항상 병행 — 적록 색각 이상 고려", "en": "Status colours must never be the only cue (WCAG 1.4.1). Always pair icon, label or shape — red-green CVD" },
+            { "ko": "독특한 브랜드 자산은 Fame×Uniqueness로 판단. 자산은 적게, 바꾸지 말고, 엄격히 반복 [19]", "en": "Distinctive assets are judged on Fame × Uniqueness. Keep few assets, change nothing, repeat rigidly [19]" },
+            { "ko": "NN/g 신뢰 4요소: 디자인 품질, 선제적 공개, 충실하고 최신인 내용, 외부와의 연결 [20]", "en": "NN/g's four credibility factors: design quality, up-front disclosure, current content, links to the wider web [20]" },
+            { "ko": "의료법 56조: 치료경험담·과장·중요 정보 누락 금지. 57조: 대형 온라인 매체 광고 사전심의 [18]", "en": "Art. 56: no testimonials, exaggeration or omitted risks. Art. 57: pre-review for large online media [18]" }
+          ]
+        },
+        {
+          "type": "table",
+          "columns": ["서체 / Typeface", "라이선스 / Licence", "상업 사용 / Commercial", "웹 임베드 / Web embed", "Google Fonts", "비고 / Notes"],
+          "rows": [
+            ["IBM Plex Sans KR", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "예 / Yes", "최종 선정 KO+EN 본문·제목 / FINAL primary family"],
+            ["IBM Plex Mono", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "예 / Yes", "최종 선정 숫자·라벨, 기본 tabular / FINAL numerals"],
+            ["Space Grotesk", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "예 / Yes", "워드마크 베이스, 벡터화 / wordmark base, flattened"],
+            ["Noto Sans KR", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "예 / Yes", "Figma 기본 목록, 워드마크 대체 / Figma default, fallback"],
+            ["Pretendard / Variable", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "아니오 / No", "승인된 대체 서체, 로컬 설치 / approved alternative, local install"],
+            ["Pretendard GOV", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "아니오 / No", "KRDS 기본 KO/EN 서체 / KRDS default face"],
+            ["Spoqa Han Sans Neo", "SIL OFL 1.1", "가능 (로고·BI 명시) / Yes", "가능 / Yes", "아니오 / No", "5 웨이트, 웹 CSS 제공 / 5 weights, web CSS"],
+            ["SUIT / SUIT Variable", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "아니오 / No", "README 미렌더, Noonnu로 확인 / OFL confirmed via Noonnu"],
+            ["Wanted Sans", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "아니오 / No", "지오메트릭-휴머니스트, 7 웨이트 / 7 weights + variable"],
+            ["Inter", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "예 / Yes", "가변 100–900, tnum, 슬래시 0 / tnum, slashed zero"],
+            ["Geist / Geist Mono", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "예 / Yes", "Vercel, 2024-10부터 Google Fonts / on Google Fonts since 2024-10"],
+            ["JetBrains Mono", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "예 / Yes", "가변 100–800, 큰 x-height / tall x-height"],
+            ["Nanum Gothic", "SIL OFL 1.1", "가능 / Yes", "가능 / Yes", "예 / Yes", "산돌·네이버, 화면 힌팅 / screen-hinted Korean sans"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "title": { "ko": "출처", "en": "Sources" },
+      "kicker": { "ko": "10 · 2026-09-14 접근", "en": "10 · Accessed 2026-09-14" },
+      "blocks": [
+        {
+          "type": "sources",
+          "items": [
+            { "n": 1, "title": "스마트닥터 공식 사이트 — 모듈, 3,527 병원, 알림톡·네이버예약 / Smart Doctor official site", "url": "https://smartdoctor.cc/" },
+            { "n": 2, "title": "닥터팔레트 공식 사이트 — 클라우드 EMR 태그라인 / Dr.Palette official site", "url": "https://dr.pltt.cloud/" },
+            { "n": 3, "title": "메디게이트뉴스 — EMR 선택 기준 설문 (의사 1,030명) / Medigate News EMR selection survey", "url": "https://m.medigatenews.com/news/2494179620" },
+            { "n": 4, "title": "청년의사 — 이지케어텍 클라우드 EMR 설문 (839명) / EZCaretech cloud-EMR survey", "url": "http://www.docdocdoc.co.kr/news/articleView.html?idxno=2017926" },
+            { "n": 5, "title": "Pabau — Pricing (4,000+ practices, $62 seat)", "url": "https://pabau.com/pricing/" },
+            { "n": 6, "title": "Nextech — Cora Scribe press release (KLAS, 16,000 physicians)", "url": "https://www.nextech.com/press-releases/nextech-launches-ai-powered-cora-scribe" },
+            { "n": 7, "title": "Jane Design System — Color (Jane Blue #00C1CA, typography)", "url": "https://design.jane.com/latest/design-system/color.html" },
+            { "n": 8, "title": "채널톡 블로그 — 새로운 채널 BI (채널블루) / Channel Talk rebrand", "url": "https://channel.io/ko/blog/articles/new-channel-bi-ba56df4e" },
+            { "n": 9, "title": "토스피드 — 토스의 새 로고 / Toss 3D logo; colour rules at brand.toss.im", "url": "https://toss.im/tossfeed/article/toss-newlogo" },
+            { "n": 10, "title": "강남언니 블로그 — 리브랜딩 2026 / Gangnam Unni 2026 rebrand", "url": "https://blog.gangnamunni.com/series/rebranding-2026" },
+            { "n": 11, "title": "서울신문 — 피부과 개원 쏠림 (85.3%) / dermatology opening saturation", "url": "https://www.seoul.co.kr/news/society/2025/09/02/20250902010002" },
+            { "n": 12, "title": "보건복지부 보도자료 — 외국인 환자 200만 명 (list_no=1490280) / MOHW 2M foreign patients", "url": "https://www.mohw.go.kr/" },
+            { "n": 13, "title": "Pretendard 저장소 — SIL OFL, 변형, CDN / Pretendard repository", "url": "https://github.com/orioncactus/pretendard" },
+            { "n": 14, "title": "IBM Plex 저장소 — OFL-1.1, Plex Sans KR, Plex Mono / IBM Plex repository", "url": "https://github.com/IBM/plex" },
+            { "n": 15, "title": "Figma Help — Add a font to Figma (Google Fonts 기본, 로컬 설치)", "url": "https://help.figma.com/hc/en-us/articles/360039956894-Add-a-font-to-Figma" },
+            { "n": 16, "title": "W3C — Understanding SC 1.4.3 Contrast (Minimum); WCAG 2.2", "url": "https://w3c.github.io/wcag21/understanding/contrast-minimum.html" },
+            { "n": 17, "title": "KWCAG 2.2 (KS X OT0003:2022) 비공식 미러 / unofficial mirror", "url": "https://a11ykr.github.io/kwcag22/" },
+            { "n": 18, "title": "의료법 제56조·57조 (CaseNote) / Medical Service Act Art. 56 and 57", "url": "https://casenote.kr/%EB%B2%95%EB%A0%B9/%EC%9D%98%EB%A3%8C%EB%B2%95/%EC%A0%9C56%EC%A1%B0" },
+            { "n": 19, "title": "Ehrenberg-Bass — The Four Commandments: future-proofing a brand's identity", "url": "https://marketingscience.info/news-and-insights/the-four-commandments-future-proofing-a-brands-identity" },
+            { "n": 20, "title": "NN/g — Trustworthiness in Web Design: 4 Credibility Factors", "url": "https://www.nngroup.com/articles/trustworthy-design/" }
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "limitation",
+          "ko": "연구 한계: 샌드박스 프록시가 공식 페이지 대부분(경쟁사 홈·가격, fonts.google.com, w3.org, 의료법 원문 등)을 차단해 여러 발견이 검색 스니펫에 의존합니다. 미확인 시각 속성, 근사 색상(토스·채널톡), 벤더 자체 보고 수치, 의료법 조문은 라이브 재검증이 필요합니다. 가설로 표시된 항목: 락인 두려움, 상담실장 이직 리스크, 채널 분산, 피크 다운타임 불안, 한글 행간·자간 수치, 닥터팔레트 다색 팔레트, Pretendard tnum 지원.",
+          "en": "Research limitations: the sandbox proxy blocked most official pages (competitor home and pricing pages, fonts.google.com, w3.org, the statute text), so several findings rest on search snippets. Unobserved visuals, approximate colours (Toss, Channel Talk), vendor-reported counts and the legal text need live re-verification. Items marked hypothesis: lock-in fear, counselor-turnover risk, channel fragmentation, peak-hour downtime anxiety, Hangul line-height and tracking figures, Dr.Palette's multi-hue palette, Pretendard tnum support."
+        }
+      ]
+    }
+  ]
+}

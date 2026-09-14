@@ -1,0 +1,210 @@
+{
+  "page": "02 Brand Strategy",
+  "meta": {
+    "brand": "Synaptix · 시넵틱스",
+    "date": "2026-09-14",
+    "language_order": ["ko", "en"],
+    "rules": "Never lead with AI. Never invent integrations, certifications, customer counts, results, uptime or reliability guarantees."
+  },
+  "sections": [
+    {
+      "id": "s1",
+      "title": { "ko": "포지셔닝", "en": "Positioning" },
+      "kicker": { "ko": "01 · 우리는 무엇인가", "en": "01 · What we are" },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "label": { "ko": "카테고리", "en": "Category" },
+          "ko": "클리닉 운영체제",
+          "en": "The clinic operating system"
+        },
+        {
+          "type": "paragraph",
+          "label": { "ko": "포지셔닝 선언", "en": "Positioning statement" },
+          "ko": "시넵틱스는 피부과·성형외과·미용 클리닉의 접수, 상담, 시술, 결제, 재방문 관리를 하나의 시스템으로 잇는 클리닉 운영체제입니다.",
+          "en": "Synaptix is the operating system for Korean aesthetic clinics — reception, consultation, treatment, payment and follow-up, connected in one system."
+        },
+        {
+          "type": "paragraph",
+          "label": { "ko": "이름의 의미", "en": "Name meaning" },
+          "ko": "Synapse는 신호가 한 세포에서 다음 세포로 건네지는 지점, -ix는 시스템. 시넵틱스는 데스크 → 상담 → 시술 → 결제 → 재방문 사이의 인수인계를 뜻합니다.",
+          "en": "A synapse is the point where a signal is handed from one cell to the next; -ix means system. Synaptix is about the hand-offs between desk, consult, treatment, payment and follow-up."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            { "ko": "대상: 클리닉 전체 흐름을 책임지는 원장과 실장. 한국어 우선, 영어 동등", "en": "Audience: clinic directors and head managers who own the whole workflow. Korean first, English equivalent" },
+            { "ko": "현재 역량은 '접수·상담·시술기록·결제·재방문 관리'로만 일반적으로 표현. 특정 연동은 언급하지 않음", "en": "State current capability only as reception, consultation, treatment records, payment, follow-up. No named integrations" },
+            { "ko": "이전 상태: 강남권 약 26개 클리닉 대상 WhatsApp 접수 툴. 이제 약속은 포인트 툴에서 클리닉 전체 연속성으로 확장", "en": "Prior state: a WhatsApp intake tool for ~26 Gangnam clinics. Promise widens from point tool to whole-clinic continuity" }
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "finding",
+          "ko": "가드레일: 이름이 Synaptics와 여러 AI 브랜드와 충돌합니다. 신경망 메시, 뇌, 스파크, 다대다 노드 웹을 쓰지 않습니다. 심볼은 두 점 사이 하나의 명확한 경로. 링크 그리드는 노드당 연결선 최대 2개, 메시 금지. AI가 아닌 워크플로·인프라로 읽혀야 합니다.",
+          "en": "Guardrail: the name collides with Synaptics and several AI brands. No neural meshes, brains, sparks or many-to-many node webs. The symbol shows one clear path between two points; the link grid allows at most two connectors per node, never a mesh. Read as workflow and infrastructure, not AI."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "title": { "ko": "브랜드 약속", "en": "Brand promise" },
+      "kicker": { "ko": "02 · 한 문장", "en": "02 · One sentence" },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "style": "display",
+          "ko": "클리닉의 모든 순간이 하나로 연결됩니다.",
+          "en": "Every moment of the clinic, connected as one."
+        },
+        {
+          "type": "paragraph",
+          "ko": "첫 문의부터 결제와 재방문까지 환자 기록이 끊기지 않는 것. 그것이 우리가 지키는 약속이며, 모든 화면과 문장이 이 약속을 증명해야 합니다.",
+          "en": "A patient record that never breaks from first message to payment and follow-up. That is the promise, and every screen and sentence has to prove it."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "title": { "ko": "가치 축 3", "en": "Three value pillars" },
+      "kicker": { "ko": "03 · 약속을 떠받치는 것", "en": "03 · What holds the promise up" },
+      "blocks": [
+        {
+          "type": "bullets",
+          "render": "pillars",
+          "items": [
+            { "name": { "ko": "연결된 운영", "en": "Connected operations" }, "ko": "접수부터 재방문까지 한 기록, 한 흐름. 증명: 데스크·상담실·시술실이 같은 환자 기록을 봅니다.", "en": "One record, one flow, from front desk to follow-up. Proof: desk, consult and treatment rooms see one patient record." },
+            { "name": { "ko": "믿을 수 있는 정확성", "en": "Dependable precision" }, "ko": "숫자와 상태가 정확하고, 누락되지 않습니다. 증명: 상태 변경과 결제 내역이 기록되고 추적됩니다.", "en": "Numbers and statuses you can trust; nothing gets lost. Proof: status changes and payments are recorded and traceable." },
+            { "name": { "ko": "명료한 속도", "en": "Clear speed" }, "ko": "클릭은 줄이고, 인수인계는 빠르게. 증명: 한 화면에서 다음 단계로 넘기는 데 필요한 단계가 명시됩니다.", "en": "Fewer clicks, faster hand-offs, less friction at the desk. Proof: steps to the next stage are explicit on one screen." }
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "limitation",
+          "ko": "각 축의 '증명'은 증거의 종류이지 수치가 아닙니다. 실제 측정값이 생기기 전에는 숫자를 붙이지 않습니다.",
+          "en": "Each pillar's 'proof' is a type of evidence, not a metric. No numbers are attached until real measurements exist."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "title": { "ko": "목소리와 톤", "en": "Voice and tone" },
+      "kicker": { "ko": "04 · 명료하게 · 구체적으로 · 과장 없이", "en": "04 · Clear · Specific · Unhyped" },
+      "blocks": [
+        {
+          "type": "bullets",
+          "items": [
+            { "ko": "명료하게: 워크플로 단계를 이름으로 부르고, 소프트웨어가 무엇을 하는지 말합니다", "en": "Clear: name the workflow step and state what the software does" },
+            { "ko": "구체적으로: 실제 숫자만, 실제일 때만. 형용사보다 명사와 동사", "en": "Specific: real numbers only when they are real. Nouns and verbs over adjectives" },
+            { "ko": "과장 없이: 자신 있고 직설적이되, 최상급과 느낌표는 없음", "en": "Unhyped: confident and direct, with no superlatives and no exclamation marks" },
+            { "ko": "문체: 제품은 해요체, 세일즈·법무 문서는 합니다체. 쉬운 한국어", "en": "Register: 해요체 in product, 합니다체 in sales and legal. Plain Korean" }
+          ]
+        },
+        {
+          "type": "table",
+          "columns": ["Do / 이렇게", "Don't / 이렇게는 아니오"],
+          "rows": [
+            ["접수, 상담, 시술, 결제, 재방문 — 단계를 이름으로 부른다 / Name the step", "'혁신', '최고', '차세대' 같은 빈 형용사 / Empty superlatives"],
+            ["소프트웨어가 하는 일을 서술한다: '결제 내역이 환자 기록에 남습니다' / State what it does", "'AI가 알아서 합니다' — AI를 헤드라인이나 주 판매 포인트로 / AI as headline"],
+            ["실제일 때만 숫자를 쓴다 / Real numbers only", "가짜 업타임, 인증, 고객 수, 결과 수치 / Invented uptime, badges, counts, results"],
+            ["마침표로 끝낸다. 짧은 문장 / End with a period. Short sentences", "느낌표, 세 개 이상의 수식어 / Exclamation marks, stacked modifiers"],
+            ["'도입 절차 안내', '보안 정책 보기' 같은 절차적 신뢰 신호 / Process-based trust", "치료 효과·결과 약속 (의료광고 규제) / Medical outcome claims"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "title": { "ko": "브랜드 형용사", "en": "Brand descriptors" },
+      "kicker": { "ko": "05 · 다섯 단어", "en": "05 · Five words" },
+      "blocks": [
+        {
+          "type": "bullets",
+          "render": "descriptors",
+          "items": [
+            { "ko": "대담한", "en": "Bold" },
+            { "ko": "정확한", "en": "Precise" },
+            { "ko": "연결된", "en": "Connected" },
+            { "ko": "믿을 수 있는", "en": "Dependable" },
+            { "ko": "명료한", "en": "Clear" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "ko": "대담함은 크기와 대비에서 나오고, 나머지 넷은 정보의 정확성과 구조에서 나옵니다. 장식이 아닌 규율로 표현합니다.",
+          "en": "Boldness comes from scale and contrast; the other four come from accurate, structured information. Expressed through discipline, not decoration."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "title": { "ko": "헤드라인 옵션", "en": "Headline options" },
+      "kicker": { "ko": "06 · KO / EN 5쌍", "en": "06 · Five KO/EN pairs" },
+      "blocks": [
+        {
+          "type": "bullets",
+          "render": "headlines",
+          "items": [
+            { "n": 1, "ko": "클리닉을 하나의 시스템으로.", "en": "Run the clinic as one system." },
+            { "n": 2, "ko": "접수부터 재방문까지, 끊김 없이.", "en": "Front desk to follow-up, without a gap." },
+            { "n": 3, "ko": "시넵틱스. 클리닉 운영체제.", "en": "Synaptix. The clinic operating system." },
+            { "n": 4, "ko": "당신의 클리닉이 함께 움직입니다.", "en": "Your clinic, moving together." },
+            { "n": 5, "ko": "같은 화면, 같은 기준, 같은 팀.", "en": "One screen. One standard. One team." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "title": { "ko": "세일즈 카피 예시", "en": "Example sales copy" },
+      "kicker": { "ko": "07 · 안전한 카피, 지어낸 주장 없음", "en": "07 · Safe copy, no invented claims" },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "ko": "원장님이 진료에 집중하는 동안, 시넵틱스는 접수·상담·시술·결제·재방문 관리를 한 화면에서 이어줍니다. 데스크, 상담실, 시술실이 같은 정보를 보고 같은 기준으로 움직입니다. 도입 상담을 요청하세요.",
+          "en": "While you focus on patients, Synaptix links reception, consultation, treatment, payment and follow-up in one screen. Front desk, consult room and treatment room see the same information and work to the same standard. Request a demo."
+        },
+        {
+          "type": "bullets",
+          "render": "cta",
+          "items": [
+            { "ko": "도입 상담 신청", "en": "Request a demo" },
+            { "ko": "제품 둘러보기", "en": "See the product" }
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "limitation",
+          "ko": "규제 유의: 의료법 56조는 치료경험담·과장·중요 정보 누락 광고를 금지하고, 57조는 대형 온라인 매체 광고에 사전심의를 요구합니다. 클리닉용 템플릿은 최상급·'No.1'·결과 보장 문구를 피하고 심의필 슬롯을 둡니다. 알림톡은 정보성 전용이며 광고성 문구는 (광고) 표기·야간 제한·재동의 대상입니다.",
+          "en": "Regulatory note: Medical Service Act Art. 56 bans testimonials, exaggeration and omitted risks; Art. 57 requires pre-review for ads on large online media. Clinic-facing templates avoid superlatives, 'No.1' and guaranteed results, and reserve a 심의필 slot. 알림톡 is informational only; promotional wording triggers (광고) labelling, night limits and re-consent."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "title": { "ko": "메시지 아키텍처", "en": "Message architecture" },
+      "kicker": { "ko": "08 · 카테고리 → 약속 → 축 → 증거", "en": "08 · Category → promise → pillars → proof" },
+      "blocks": [
+        {
+          "type": "table",
+          "columns": ["층위 / Layer", "메시지 / Message", "역할 / Role"],
+          "rows": [
+            ["1 · 카테고리 / Category", "클리닉 운영체제 / The clinic operating system", "우리가 무엇인지 한 단어로 / What we are, in one phrase"],
+            ["2 · 약속 / Promise", "클리닉의 모든 순간이 하나로 연결됩니다. / Every moment of the clinic, connected as one.", "왜 중요한지 / Why it matters"],
+            ["3 · 가치 축 / Pillars", "연결된 운영 · 믿을 수 있는 정확성 · 명료한 속도 / Connected · Dependable · Clear speed", "약속을 어떻게 지키는지 / How we keep it"],
+            ["4 · 증거 유형 / Proof types", "절차 · 투명성 · 지원 / Process · Transparency · Support", "믿을 이유 — 주장 아닌 증거의 종류 / Kinds of evidence, not claims"]
+          ]
+        },
+        {
+          "type": "bullets",
+          "items": [
+            { "ko": "절차: 도입 절차 안내, 데이터 이관 단계, 교육 순서 — 무엇이 언제 일어나는지", "en": "Process: onboarding steps, data-migration stages, training sequence — what happens when" },
+            { "ko": "투명성: 보안 정책 보기, 데이터 처리 방침, 안정성 설계 설명 — 숨기지 않고 보여줌", "en": "Transparency: view the security policy, the data-handling policy, the stability design — shown, not hidden" },
+            { "ko": "지원: 지원 체계와 연락 경로, 문의 대응 절차 — 누가 어떻게 돕는지", "en": "Support: the support structure, contact paths, response procedure — who helps and how" },
+            { "ko": "금지: 업타임 %, 인증 배지, 고객 수, 결과 수치, 연동 목록은 실제로 존재하기 전까지 쓰지 않음", "en": "Forbidden: uptime %, certification badges, customer counts, result figures or integration lists before they exist" }
+          ]
+        }
+      ]
+    }
+  ]
+}

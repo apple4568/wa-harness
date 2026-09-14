@@ -1,0 +1,218 @@
+{
+  "page": "03 Creative Routes & Selection",
+  "meta": {
+    "brand": "Synaptix · 시넵틱스",
+    "date": "2026-09-14",
+    "language_order": ["ko", "en"],
+    "selected_route": "A"
+  },
+  "sections": [
+    {
+      "id": "s1",
+      "title": { "ko": "평가 기준", "en": "Evaluation criteria" },
+      "kicker": { "ko": "01 · 여섯 가지 잣대, 각 1–5점", "en": "01 · Six criteria, scored 1–5" },
+      "blocks": [
+        {
+          "type": "bullets",
+          "render": "criteria",
+          "items": [
+            { "n": 1, "name": { "ko": "신뢰성", "en": "Reliability" }, "ko": "원장·실장이 '안정적인 인프라'로 읽는가. 구매자 1순위 기준에 답하는가", "en": "Do directors and managers read it as stable infrastructure — the #1 buying criterion?" },
+            { "n": 2, "name": { "ko": "견고함", "en": "Robustness" }, "ko": "16px 파비콘부터 대시보드 노드, 인쇄, 다크·라이트까지 시스템이 견디는가", "en": "Does the system hold from a 16px favicon to dashboard nodes, print, dark and light?" },
+            { "n": 3, "name": { "ko": "기술적 성격", "en": "Tech character" }, "ko": "AI 클리셰 없이 정밀한 소프트웨어로 느껴지는가", "en": "Does it feel like precise software without AI clichés?" },
+            { "n": 4, "name": { "ko": "차별성", "en": "Distinctiveness" }, "ko": "파랑·둥근·말풍선 카테고리 관습과 경쟁사 심볼에서 얼마나 떨어져 있는가", "en": "How far is it from the blue, rounded, speech-bubble category norm and competitor marks?" },
+            { "n": 5, "name": { "ko": "한글 가독성", "en": "KO readability" }, "ko": "한글 워드마크와 본문이 라틴과 동등하게 또렷한가", "en": "Are the Hangul wordmark and body as crisp as the Latin?" },
+            { "n": 6, "name": { "ko": "응용 유용성", "en": "Application usefulness" }, "ko": "웹, 대시보드, 발표, 명함, 알림 템플릿에서 실제로 쓰기 쉬운가", "en": "Is it practical across web, dashboard, presentations, business cards and notice templates?" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "title": { "ko": "Route A — 동기화된 운영", "en": "Route A — Synchronized operations" },
+      "kicker": { "ko": "02 · 선정 ✅", "en": "02 · Selected ✅" },
+      "route": {
+        "id": "A",
+        "selected": true,
+        "name": { "ko": "동기화된 운영", "en": "Synchronized operations" },
+        "symbol": { "ko": "'연결 S' — 두 원형 노드를 하나의 굵은 S 커브 경로로 잇습니다. 경로의 끝이 곧 노드입니다. 작게는 S, 크게는 '시작부터 끝까지 한 번의 인수인계'로 읽힙니다. 신경망 메시가 아닙니다.", "en": "'The Link S' — two circular nodes joined by one thick S-curve path; the terminals are the nodes. Reads as an S when small, as 'one hand-off, start to finish' when large. Explicitly not a neural mesh." },
+        "wordmark": { "ko": "묵직한 지오메트릭 그로테스크, 좁은 자간. 'i'의 점을 노드 원으로 교체. 한글 '시넵틱스'는 같은 굵기로 동반 설계", "en": "Heavy geometric grotesk with tight tracking; the dot of the 'i' becomes a node circle. Hangul 시넵틱스 co-designed at the same weight" },
+        "palette": [
+          { "name": "Ink", "hex": "#0B1020" },
+          { "name": "Cobalt", "hex": "#2436E0" },
+          { "name": "Pulse Mint", "hex": "#31E3B5" },
+          { "name": "Ink 50 (light neutral)", "hex": "#F8F9FB" }
+        ],
+        "typography": { "ko": "Pretendard 계열 그로테스크 + 고정폭 숫자로 구상. 최종 시스템은 Figma 서체 프로브에 따라 IBM Plex Sans KR + IBM Plex Mono", "en": "Conceived as a Pretendard-class grotesk plus mono numerals; final system uses IBM Plex Sans KR + IBM Plex Mono per the Figma font probe" },
+        "motif": { "ko": "'링크 그리드' — 짧은 연결선으로 이어진 모듈. 노드당 최대 2개 연결선. 모션은 노드가 딱 맞물리는 동기화", "en": "'Link grid' — modules joined by short connectors, at most two per node. Motion: nodes snap together in sync" }
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "ko": "이름이 말하는 것을 그대로 그립니다. 시냅스는 신호가 건네지는 지점이고, 클리닉은 데스크에서 상담, 시술, 결제, 재방문으로 신호를 건네는 곳입니다. 다크 잉크 베이스 위의 펄스 민트가 히어로, 코발트는 버튼과 링크의 상호작용색입니다.",
+          "en": "It draws what the name says. A synapse is where a signal is handed over, and a clinic hands signals from desk to consult, treatment, payment and follow-up. Pulse Mint on a dark Ink base is the hero; Cobalt is the interaction colour for buttons and links."
+        },
+        {
+          "type": "bullets",
+          "heading": { "ko": "강점", "en": "Strengths" },
+          "items": [
+            { "ko": "이름·제품 비전·심볼이 한 이야기: 연결과 인수인계", "en": "Name, product vision and symbol tell one story: connection and hand-off" },
+            { "ko": "소유 가능한 자산 하나(연결 S + 링크 그리드)가 파비콘부터 대시보드 노드까지 확장", "en": "One ownable asset (Link S + link grid) scales from favicon to dashboard nodes" },
+            { "ko": "다크 잉크 + 민트 조합은 조사된 경쟁사 중 아무도 쓰지 않는 자리", "en": "Dark Ink + mint occupies a space no researched competitor uses" }
+          ]
+        },
+        {
+          "type": "bullets",
+          "heading": { "ko": "리스크", "en": "Risks" },
+          "items": [
+            { "ko": "노드 두 개짜리 경로가 밀도 높게 반복되면 신경망처럼 보일 수 있음 → 노드당 연결선 2개 규칙", "en": "Dense repetition of two-node paths could drift toward a neural look → max two connectors per node" },
+            { "ko": "민트는 흰 배경 위 텍스트로 쓸 수 없음(1.64:1) → 텍스트는 mint-700 또는 잉크 위에서만", "en": "Mint fails as text on white (1.64:1) → text uses mint-700 or sits on Ink only" },
+            { "ko": "16px에서 S 카운터가 닫힐 수 있음 → 시각 보정, 24px에서 노드가 원으로 보여야 함", "en": "S counters may close at 16px → visual tuning; nodes must stay visibly round at 24px" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "title": { "ko": "Route B — 정밀 인프라", "en": "Route B — Precision infrastructure" },
+      "kicker": { "ko": "03 · 미선정", "en": "03 · Not selected" },
+      "route": {
+        "id": "B",
+        "selected": false,
+        "name": { "ko": "정밀 인프라", "en": "Precision infrastructure" },
+        "symbol": { "ko": "두 개의 평행 레일로 만든 모노라인 'S', 사각 끝단, 헤어라인 사각 프레임 안에 배치. 크로스헤어 눈금", "en": "A monoline 'S' built from two parallel rails with square terminals, inside a hairline square frame; crosshair ticks" },
+        "wordmark": { "ko": "테크니컬 그로테스크, 넓은 자간, 스몰캡 'SYNAPTIX'", "en": "Technical grotesk, wide tracking, small caps 'SYNAPTIX'" },
+        "palette": [
+          { "name": "Graphite", "hex": "#1E2229" },
+          { "name": "Electric Cobalt", "hex": "#1B37F2" },
+          { "name": "Safety Orange", "hex": "#FF6A1A" },
+          { "name": "Concrete Grey (approx)", "hex": "#B8BCC2" }
+        ],
+        "typography": { "ko": "IBM Plex Sans KR + IBM Plex Mono. 보이는 그리드 선과 치수 주석", "en": "IBM Plex Sans KR + IBM Plex Mono; visible grid lines and dimension annotations" },
+        "motif": { "ko": "설계 도면 — 그리드, 눈금, 치수선. 정지된 정밀함", "en": "Engineering drawing — grid, ticks, dimension lines. Static precision" }
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "ko": "클리닉을 계측기처럼 다룹니다. 모든 것이 눈금 위에 놓이고 치수가 표시됩니다. 안정성의 인상은 가장 강하지만, 클리닉을 마주하는 화면에서는 산업용 도구처럼 차가워집니다.",
+          "en": "Treats the clinic as an instrument. Everything sits on a scale and carries a dimension. Strongest impression of stability, but it turns cold and industrial on clinic-facing surfaces."
+        },
+        {
+          "type": "bullets",
+          "heading": { "ko": "강점", "en": "Strengths" },
+          "items": [
+            { "ko": "신뢰성 인상이 가장 직접적 — 도면·그리드·눈금이 곧 '정확함'", "en": "The most direct reliability signal — drawing, grid and ticks read as 'exact'" },
+            { "ko": "Plex 계열 서체와 모노 숫자가 대시보드에 잘 맞음", "en": "Plex family and mono numerals suit the dashboard" },
+            { "ko": "세이프티 오렌지가 그래파이트 위에서 강한 대비", "en": "Safety Orange gives strong contrast on Graphite" }
+          ]
+        },
+        {
+          "type": "bullets",
+          "heading": { "ko": "리스크", "en": "Risks" },
+          "items": [
+            { "ko": "산업·개발자 도구처럼 읽힘 — 청담 클리닉 인테리어와 어긋남", "en": "Reads like industrial or dev tooling — at odds with Cheongdam clinic interiors" },
+            { "ko": "치수 주석이 클리닉용 페이지를 어지럽힘", "en": "Dimension annotations clutter clinic-facing pages" },
+            { "ko": "레일·크로스헤어는 많은 인프라 브랜드가 사용 — 소유 가능성 낮음", "en": "Rails and crosshairs are common across infra brands — low ownability" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "title": { "ko": "Route C — 자신 있는 진보", "en": "Route C — Confident progress" },
+      "kicker": { "ko": "04 · 미선정", "en": "04 · Not selected" },
+      "route": {
+        "id": "C",
+        "selected": false,
+        "name": { "ko": "자신 있는 진보", "en": "Confident progress" },
+        "symbol": { "ko": "앞으로 기운 'S' 슬래시 화살표(이탤릭 스텐실)와 선명한 라임 블록", "en": "A forward-leaning 'S' slash arrow (italic stencil) with a vivid lime block" },
+        "wordmark": { "ko": "표현적인 엑스트라볼드, 살짝 이탤릭 'Synaptix', 부드러운 둥근 모서리", "en": "Expressive extra-bold, slightly italic 'Synaptix', soft rounded corners" },
+        "palette": [
+          { "name": "Off-white", "hex": "#FAF8F2" },
+          { "name": "Ink", "hex": "#14161A" },
+          { "name": "Vivid Lime", "hex": "#C6F135" },
+          { "name": "Coral", "hex": "#FF5A5F" }
+        ],
+        "typography": { "ko": "Wanted Sans / SUIT 계열 둥근 볼드. 크고 친근한 헤드라인", "en": "Wanted Sans / SUIT-style rounded bold; big friendly headlines" },
+        "motif": { "ko": "속도선과 기울어진 블록 — 앞으로 나아가는 에너지", "en": "Speed lines and tilted blocks — forward energy" }
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "ko": "대담하고 현대적인 소비자 앱의 에너지를 빌립니다. 눈에 띄지만, 토스·강남언니의 영역으로 미끄러지고, 클리닉 원장이 덜 진지하게 읽을 가능성이 있습니다(가설).",
+          "en": "Borrows the energy of bold, modern consumer apps. Eye-catching, but it drifts into Toss and Gangnam Unni territory, and directors may read it as less serious (hypothesis)."
+        },
+        {
+          "type": "bullets",
+          "heading": { "ko": "강점", "en": "Strengths" },
+          "items": [
+            { "ko": "가장 대담한 첫인상 — '대담한' 형용사를 가장 직접 충족", "en": "Boldest first impression — meets the 'Bold' descriptor most directly" },
+            { "ko": "둥근 한글 서체가 친근하고 읽기 쉬움", "en": "Rounded Hangul face is friendly and easy to read" },
+            { "ko": "라임·코랄 조합이 카테고리의 파랑에서 확실히 벗어남", "en": "Lime and coral clearly break from the category's blue" }
+          ]
+        },
+        {
+          "type": "bullets",
+          "heading": { "ko": "리스크", "en": "Risks" },
+          "items": [
+            { "ko": "소비자 앱(토스·강남언니)처럼 보여 B2B 인프라의 신뢰가 약해짐", "en": "Looks like a consumer app (Toss, Gangnam Unni), weakening B2B infrastructure trust" },
+            { "ko": "라임은 텍스트 대비를 통과하지 못함 — UI에서 쓸 수 있는 자리가 적음", "en": "Lime fails text contrast — few usable places in UI" },
+            { "ko": "이탤릭·스텐실 S는 이름의 '연결' 의미와 무관", "en": "The italic stencil S has nothing to do with the name's meaning of connection" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "title": { "ko": "평가 매트릭스", "en": "Evaluation matrix" },
+      "kicker": { "ko": "05 · 1–5점, 합계 30점 만점", "en": "05 · Scored 1–5, total out of 30" },
+      "blocks": [
+        {
+          "type": "table",
+          "columns": ["기준 / Criterion", "Route A", "Route B", "Route C"],
+          "rows": [
+            ["신뢰성 / Reliability", "5", "5", "3"],
+            ["견고함 / Robustness", "5", "4", "3"],
+            ["기술적 성격 / Tech character", "5", "4", "4"],
+            ["차별성 / Distinctiveness", "4", "3", "4"],
+            ["한글 가독성 / KO readability", "5", "4", "4"],
+            ["응용 유용성 / Application usefulness", "5", "3", "4"],
+            ["합계 / TOTAL", "29", "23", "22"]
+          ],
+          "total_row": true
+        },
+        {
+          "type": "bullets",
+          "items": [
+            { "ko": "B: 안정성은 강하나 산업·개발 도구처럼 읽히고, 주석이 클리닉 페이지를 어지럽히며, 레일·크로스헤어는 소유성이 낮음", "en": "B: strong stability, but reads industrial, annotations clutter clinic pages, and rails/crosshairs have low ownability" },
+            { "ko": "C: 대담하고 현대적이나 소비자 앱 영역으로 흐르고(원장이 덜 진지하게 볼 가설), 라임이 텍스트 대비에 실패", "en": "C: bold and modern, but drifts toward consumer apps (hypothesis: directors read it as less serious); lime fails contrast" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "title": { "ko": "선정 근거", "en": "Selection rationale" },
+      "kicker": { "ko": "06 · 왜 Route A인가", "en": "06 · Why Route A" },
+      "blocks": [
+        {
+          "type": "bullets",
+          "items": [
+            { "ko": "이름의 의미를 구현: 시냅스 = 연결. 두 노드와 하나의 경로가 이름을 그대로 그림", "en": "Embodies the name: synapse = connection. Two nodes and one path draw the name literally" },
+            { "ko": "제품 비전과 일치: 클리닉 전체가 연결된다는 약속을 심볼과 링크 그리드가 반복", "en": "Matches the product vision: the symbol and link grid repeat the promise of a whole clinic linked" },
+            { "ko": "소유 가능한 자산 하나: 연결 S + 링크 그리드가 파비콘, 앱 아이콘, 대시보드 노드까지 스케일", "en": "One ownable asset: Link S + link grid scale from favicon and app icon to dashboard nodes" },
+            { "ko": "경쟁사 공백: 다크 잉크 베이스 + 펄스 민트는 파랑·틸·다색 팔레트 어디와도 겹치지 않음", "en": "Competitor white space: dark Ink + Pulse Mint overlaps none of the blue, teal or multi-hue palettes" },
+            { "ko": "한글 가독성: 묵직한 그로테스크와 IBM Plex Sans KR이 한글 워드마크와 본문을 라틴과 동등하게 유지", "en": "KO readability: a heavy grotesk and IBM Plex Sans KR keep the Hangul wordmark and body on par with the Latin" },
+            { "ko": "응용 유용성: 노드·연결선 모티프가 히어로 배경, 구분선, 차트, 아이콘 끝단으로 자연스럽게 확장", "en": "Application usefulness: the node-and-connector motif extends to hero backgrounds, dividers, charts and icon terminals" },
+            { "ko": "B의 구조(그리드, 모노 숫자)를 산업적 차가움 없이 흡수함", "en": "Carries B's structure (grid, mono numerals) without the industrial coldness" }
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "finding",
+          "ko": "자율 결정 기록 · 2026-09-14: 브리프에 따라 이해관계자 승인 없이 자율적으로 Route A를 선정했습니다. Route B에서 이어받은 것 — 그리드 구조, 고정폭 숫자, IBM Plex 서체 계열(최종 타이포그래피). Route C에서 이어받은 것 — 없음. 이 결정은 Figma 03 페이지에 기록되며, 이해관계자 검토 시 재논의할 수 있습니다.",
+          "en": "Decision record · 2026-09-14: Route A was selected autonomously per the brief, without stakeholder sign-off. Carried over from Route B — the grid structure, mono numerals and the IBM Plex family (final typography). Carried over from Route C — nothing. The decision is recorded on Figma page 03 and can be revisited at stakeholder review."
+        }
+      ]
+    }
+  ]
+}
