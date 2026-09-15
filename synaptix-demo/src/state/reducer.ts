@@ -320,17 +320,37 @@ export function reducer(state: DemoState, action: DemoAction): DemoState {
       if (!conv || conv.ownership !== 'human') return state;
       if (action.photoId && !isApprovedPhoto(state, action.photoId)) return state;
       const { id, seq } = nextMessageId(state);
+      // Staff write Korean; the assistant translates before sending. `text` is always
+      // what the customer receives, `translationKo` always the staff-side Korean.
+      const translated = action.translatedText;
       const message: Message = {
         id,
         conversationId: conv.id,
         at: state.clock,
         author: 'staff',
         kind: action.photoId ? 'photo' : 'text',
-        text: action.text,
+        text: translated ?? action.text,
+        ...(translated ? { translationKo: action.text, translatedFromKo: true } : {}),
         ...(action.photoId ? { photoId: action.photoId } : {}),
         delivery: 'sending',
       };
       return appendMessage({ ...state, seq }, message);
+    }
+
+    case 'IDENTIFY_CUSTOMER': {
+      const customer = state.customers[action.customerId];
+      if (!customer) return state;
+      return {
+        ...state,
+        customers: {
+          ...state.customers,
+          [customer.id]: {
+            ...customer,
+            name: action.name,
+            ...(action.readingKo ? { readingKo: action.readingKo } : {}),
+          },
+        },
+      };
     }
 
     /* --- ownership --- */

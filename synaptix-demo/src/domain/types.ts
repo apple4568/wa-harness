@@ -27,8 +27,12 @@ export type Role = 'staff' | 'manager';
 
 export interface Customer {
   id: string;
-  /** Display name in the customer's own script, e.g. "佐藤 美咲" or "Emily Carter". */
-  name: string;
+  /** Display name in the customer's own script, e.g. "佐藤 美咲" or "Emily Carter".
+   *  UNDEFINED until the customer tells us: on a first inbound message a channel only
+   *  gives us a handle (Instagram), a phone number (WhatsApp) or a pseudonymous id
+   *  (WeChat). Use `customerName()` from `@/lib/labels` to display — it falls back to
+   *  the handle — and `IDENTIFY_CUSTOMER` to fill it in once the customer says it. */
+  name?: string;
   /** Optional romanised / Korean-friendly reading shown to staff. */
   readingKo?: string;
   language: Language;
@@ -75,6 +79,10 @@ export interface Message {
   translationKo?: string;
   /** Flag copy that still needs a fluent-speaker review. Shown discreetly to staff. */
   needsLanguageReview?: boolean;
+  /** True when a staff member wrote `translationKo` in Korean and the assistant
+   *  translated it into the customer's language before sending. `text` is what the
+   *  customer received; `translationKo` is what the staff member actually typed. */
+  translatedFromKo?: boolean;
   /** For kind='photo': the approved knowledge item used. */
   photoId?: string;
   /** For kind='customer_attachment': a local, bundled placeholder asset path. */
@@ -448,7 +456,12 @@ export type DemoAction =
   | { type: 'SET_DELIVERY'; messageId: string; delivery: DeliveryState }
   | { type: 'MARK_READ'; conversationId: string }
   /** Staff composer submit. Ignored unless ownership === 'human'. */
-  | { type: 'SEND_STAFF_MESSAGE'; conversationId: string; text: string; photoId?: string }
+  /** `text` is what the staff member typed (Korean). When `translatedText` is given the
+   *  assistant translates on send: the customer receives `translatedText` and staff keep
+   *  the Korean original alongside it. */
+  | { type: 'SEND_STAFF_MESSAGE'; conversationId: string; text: string; translatedText?: string; photoId?: string }
+  /** The customer told us their name; fill it in on the contact record. */
+  | { type: 'IDENTIFY_CUSTOMER'; customerId: string; name: string; readingKo?: string }
 
   /* --- ownership --- */
   /** Assistant hands over: adds handover summary, ownership → needs_human, assistant idle, discards draft. */

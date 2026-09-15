@@ -39,8 +39,13 @@ const summary: HandoverSummary = {
   at: m05.at,
 };
 
-const STAFF_REPLY =
-  "Hi Chia-ying, this is Seo-yeon from the front desk. Thanks for telling us about your skin. Whether a programme is suitable is something our consultant assesses in person, so we can't say over chat — but if you'd like, I can book a consultation for early October and add a note about your sensitivity so the consultant is prepared.";
+/** What Seo-yeon actually types: her own language, Korean. */
+const STAFF_REPLY_KO =
+  '린자잉 님, 안녕하세요. Midam Clinic 프런트의 서연입니다. 피부에 대해 말씀해 주셔서 감사합니다. 시술이 적합한지는 상담사가 직접 보고 판단해야 해서 채팅으로는 말씀드리기 어렵습니다. 원하시면 10월 초로 상담을 예약해 드리고, 피부가 민감하시다는 점을 메모로 남겨 상담사가 미리 확인할 수 있도록 하겠습니다.';
+
+/** What the customer receives: the assistant translates Seo-yeon's Korean into her language. */
+const STAFF_REPLY_ZH =
+  '林小姐您好，我是 Midam Clinic 櫃檯的徐妍。謝謝您告訴我們您的膚況。療程是否適合，需要由諮詢師當面評估，這部分無法在聊天中判斷。若您願意，我可以為您預約十月初的諮詢，並在紀錄中註明您的皮膚較為敏感，讓諮詢師事先掌握。';
 
 export const humanTakeover: Scenario = {
   id: 'human-takeover',
@@ -99,9 +104,13 @@ export const humanTakeover: Scenario = {
     }),
     step({
       id: 'staff-replies',
-      title: 'Staff replies personally',
+      title: 'Staff replies personally — in Korean, delivered in Chinese',
+      note: 'Seo-yeon types Korean. The assistant translates on send, so the customer reads Traditional Chinese and staff keep the Korean original.',
       delayMs: DELAY.send,
-      actions: [setClock('2026-09-15T10:29:00'), { type: 'SEND_STAFF_MESSAGE', conversationId: CID, text: STAFF_REPLY }],
+      actions: [
+        setClock('2026-09-15T10:29:00'),
+        { type: 'SEND_STAFF_MESSAGE', conversationId: CID, text: STAFF_REPLY_KO, translatedText: STAFF_REPLY_ZH },
+      ],
       pauseAfter: true,
     }),
     step({

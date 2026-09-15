@@ -1,4 +1,4 @@
-import type { BookingStage, Channel, ConnectionStatus, DeliveryState, Language, Ownership } from '@/domain/types';
+import type { BookingStage, Channel, ConnectionStatus, Customer, DeliveryState, Language, Ownership } from '@/domain/types';
 import { STAFF_BY_ID } from '@/data/staff';
 
 export const CHANNEL_LABEL: Record<Channel, string> = {
@@ -16,6 +16,15 @@ export const LANGUAGE_TAG: Record<Language, string> = {
   'zh-Hant': 'ZH-Hant',
   en: 'EN',
   ko: 'KO',
+};
+
+/** Compact but readable — "ZH-Hant" means nothing to a front-desk user. */
+export const LANGUAGE_SHORT: Record<Language, string> = {
+  ja: 'Japanese',
+  'zh-Hans': 'Chinese (Simp.)',
+  'zh-Hant': 'Chinese (Trad.)',
+  en: 'English',
+  ko: 'Korean',
 };
 
 export const LANGUAGE_LABEL: Record<Language, string> = {
@@ -77,4 +86,16 @@ export function staffInitials(idOrName: string | undefined): string {
 /** "Sat 19 Sep · 11:00" but with a narrow no-break for the mono time column. */
 export function shortDateKey(iso: string): string {
   return iso.slice(0, 10);
+}
+
+/** What to call a customer on screen. Falls back to the channel handle while the
+ *  name is still unknown — on first contact a channel gives us a handle, not a person. */
+export function customerName(customer: Customer | undefined): string {
+  if (!customer) return 'Unknown contact';
+  return customer.name ?? customer.handle;
+}
+
+/** True while we still only have a handle. Staff should see that plainly. */
+export function isUnidentified(customer: Customer | undefined): boolean {
+  return !!customer && customer.name === undefined;
 }

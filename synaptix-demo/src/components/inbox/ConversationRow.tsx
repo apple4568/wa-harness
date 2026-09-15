@@ -3,7 +3,7 @@ import { memo } from 'react';
 import type { Conversation, Message } from '@/domain/types';
 import { formatRelative } from '@/domain/calendar';
 import { useDemo } from '@/state/store';
-import { LANGUAGE_TAG, staffInitials } from '@/lib/labels';
+import { LANGUAGE_SHORT, customerName, isUnidentified, staffInitials } from '@/lib/labels';
 import { cn } from '@/lib/cn';
 import { ChannelGlyph, NodeGlyph } from '@/components/icons/channels';
 import { Avatar } from '@/components/ui/avatar';
@@ -64,8 +64,8 @@ export const ConversationRow = memo(function ConversationRow({
       <Avatar monogram={customer?.monogram ?? '??'} glyph={<ChannelGlyph channel={conv.channel} />} />
       <div className="row__body">
         <div className="row__top">
-          <span className="row__name" lang={customer?.language}>
-            {customer?.name ?? conv.customerId}
+          <span className={cn('row__name', isUnidentified(customer) && 'row__name--handle')} lang={customer?.name ? customer.language : undefined}>
+            {customerName(customer)}
           </span>
           {customer?.readingKo ? (
             <span className="row__reading" lang="ko">
@@ -76,8 +76,8 @@ export const ConversationRow = memo(function ConversationRow({
         </div>
         <div className="row__bottom">
           {customer ? (
-            <Badge tone="outline" mono>
-              {LANGUAGE_TAG[customer.language]}
+            <Badge tone="outline" className="lang-chip" data-lang={customer.language}>
+              {LANGUAGE_SHORT[customer.language]}
             </Badge>
           ) : null}
           <span className="row__preview" lang={last?.author === 'customer' ? customer?.language : undefined}>

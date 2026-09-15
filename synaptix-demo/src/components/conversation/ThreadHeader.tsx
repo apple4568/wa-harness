@@ -2,7 +2,7 @@ import { CalendarDays, Hand, MapPin, Undo2, UserRound } from 'lucide-react';
 import type { Conversation, Customer } from '@/domain/types';
 import { STAFF_BY_ROLE } from '@/data/staff';
 import { useDemo } from '@/state/store';
-import { CHANNEL_LABEL, LANGUAGE_LABEL, LANGUAGE_TAG, OWNERSHIP_LABEL } from '@/lib/labels';
+import { CHANNEL_LABEL, LANGUAGE_LABEL, OWNERSHIP_LABEL, customerName, isUnidentified } from '@/lib/labels';
 import { cn } from '@/lib/cn';
 import { ChannelGlyph, NodeGlyph } from '@/components/icons/channels';
 import { Avatar } from '@/components/ui/avatar';
@@ -27,12 +27,19 @@ export function ThreadHeader({ conversation: conv, customer }: { conversation: C
   const [showKo, setShowKo] = useTranslationToggle();
 
   return (
-    <header className="thread-header">
+    <header className="thread-header" data-testid="thread-header">
       <div className="thread-header__who">
         <Avatar monogram={customer.monogram} size="lg" glyph={<ChannelGlyph channel={conv.channel} />} />
         <div className="thread-header__names">
           <div className="thread-header__name">
-            <span lang={customer.language}>{customer.name}</span>
+            <span lang={customer.name ? customer.language : undefined}>{customerName(customer)}</span>
+            {isUnidentified(customer) ? (
+              <Tooltip content="The channel gives us a handle, not a name. The assistant asks for one when a booking needs it.">
+                <span className="meta thread-header__unknown" tabIndex={0} data-testid="unidentified">
+                  name not given yet
+                </span>
+              </Tooltip>
+            ) : null}
             {customer.readingKo ? (
               <span className="meta truncate" lang="ko">
                 {customer.readingKo}
@@ -42,10 +49,11 @@ export function ThreadHeader({ conversation: conv, customer }: { conversation: C
           <div className="thread-header__sub" title={`${CHANNEL_LABEL[conv.channel]} · ${conv.account} · ${customer.handle} · ${LANGUAGE_LABEL[customer.language]}${customer.location ? ` · ${customer.location}` : ''}`}>
             <ChannelGlyph channel={conv.channel} size={12} />
             <span className="truncate">
-              {CHANNEL_LABEL[conv.channel]} · {conv.account} · {customer.handle} ·{' '}
-              <Tooltip content={LANGUAGE_LABEL[customer.language]}>
-                <span className="mono">{LANGUAGE_TAG[customer.language]}</span>
-              </Tooltip>
+              {CHANNEL_LABEL[conv.channel]} · {conv.account}
+              {isUnidentified(customer) ? '' : ` · ${customer.handle}`} ·{' '}
+              <span className="lang-chip lang-chip--inline" data-lang={customer.language}>
+                {LANGUAGE_LABEL[customer.language]}
+              </span>
               {customer.location ? (
                 <>
                   {' · '}

@@ -1,6 +1,8 @@
 /**
- * Scenario 1 — Instagram inquiry to confirmed booking (佐藤 美咲 Sato Misaki, JA).
+ * Scenario 1 — Instagram inquiry to confirmed booking (@misaki.sato → 佐藤 美咲, JA).
  * The conversation does not exist in the seed; the first step creates it.
+ * The customer is UNIDENTIFIED at first — Instagram gives us a handle, not a name —
+ * and is identified only when she gives her name for the booking (step `confirms`).
  */
 import type { Conversation, Scenario } from '../domain/types.ts';
 import { CHANNEL_ACCOUNTS } from '../data/settings.ts';
@@ -40,9 +42,9 @@ const m01 = msg('customer', {
 const m02 = msg('assistant', {
   id: 'm-misaki-02',
   at: '2026-09-15T10:23:00',
-  text: 'はじめまして、佐藤様。Midam Clinicはソウル・江南（カンナム）にあり、営業時間は月〜金 10:00〜19:00、土曜 10:00〜15:00です。海外からのお客様や初めての方も歓迎で、日本語でメッセージをお送りいただけます。ご来院時はまずカウンセラーによる30分のカウンセリングから始まり、受付のためパスポートをお持ちいただいています。',
+  text: 'はじめまして。Midam Clinicはソウル・江南（カンナム）にあり、営業時間は月〜金 10:00〜19:00、土曜 10:00〜15:00です。海外からのお客様や初めての方も歓迎で、日本語でメッセージをお送りいただけます。ご来院時はまずカウンセラーによる30分のカウンセリングから始まり、受付のためパスポートをお持ちいただいています。',
   translationKo:
-    '처음 뵙겠습니다, 사토 님. Midam Clinic은 서울 강남에 있으며 영업시간은 월–금 10:00–19:00, 토 10:00–15:00입니다. 해외 고객과 첫 방문 고객 모두 환영하며, 일본어로 메시지를 보내셔도 됩니다. 방문 시 먼저 상담사와 30분 상담을 진행하며, 접수를 위해 여권을 지참해 주시면 됩니다.',
+    '처음 뵙겠습니다. Midam Clinic은 서울 강남에 있으며 영업시간은 월–금 10:00–19:00, 토 10:00–15:00입니다. 해외 고객과 첫 방문 고객 모두 환영하며, 일본어로 메시지를 보내셔도 됩니다. 방문 시 먼저 상담사와 30분 상담을 진행하며, 접수를 위해 여권을 지참해 주시면 됩니다.',
   sourceIds: ['kb-hours-location', 'kb-languages', 'kb-consultation-process'],
 });
 
@@ -84,17 +86,17 @@ const m06 = msg('customer', {
 const m07 = msg('assistant', {
   id: 'm-misaki-07',
   at: '2026-09-15T10:32:00',
-  text: 'ありがとうございます。ご予約前に内容を確認させてください。\n・初回カウンセリング（約30分）\n・9月17日(木) 14:00\n・Midam Clinic（ソウル・江南）\n・受付時にパスポートが必要です\nこちらの内容で予約を進めてよろしいでしょうか？',
+  text: 'ありがとうございます。ご予約前に内容を確認させてください。\n・初回カウンセリング（約30分）\n・9月17日(木) 14:00\n・Midam Clinic（ソウル・江南）\n・受付時にパスポートが必要です\nご予約のため、パスポートと同じお名前を教えていただけますか。\nこちらの内容で予約を進めてよろしいでしょうか？',
   translationKo:
-    '감사합니다. 예약 전에 내용을 확인해 주세요.\n・첫 상담(약 30분)\n・9월 17일(목) 14:00\n・Midam Clinic(서울 강남)\n・접수 시 여권 필요\n이 내용으로 예약을 진행해도 될까요?',
+    '감사합니다. 예약 전에 내용을 확인해 주세요.\n・첫 상담(약 30분)\n・9월 17일(목) 14:00\n・Midam Clinic(서울 강남)\n・접수 시 여권 필요\n예약을 위해 여권과 동일한 성함을 알려 주시겠어요?\n이 내용으로 예약을 진행해도 될까요?',
   sourceIds: ['kb-consultation-process'],
 });
 
 const m08 = msg('customer', {
   id: 'm-misaki-08',
   at: '2026-09-15T10:34:00',
-  text: 'はい、お願いします。9月17日(木) 14:00で予約してください。',
-  translationKo: '네, 부탁드립니다. 9월 17일(목) 14:00으로 예약해 주세요.',
+  text: '佐藤美咲と申します。はい、お願いします。9月17日(木) 14:00で予約してください。',
+  translationKo: '사토 미사키라고 합니다. 네, 부탁드립니다. 9월 17일(목) 14:00으로 예약해 주세요.',
 });
 
 const m09 = msg('assistant', {
@@ -114,7 +116,7 @@ export const inquiryToBooking: Scenario = {
   id: 'inquiry-to-booking',
   title: 'Instagram inquiry → confirmed booking',
   summary:
-    'A first-time customer from Tokyo writes in Japanese on Instagram. The assistant answers from approved knowledge, shares an approved photo, offers consultation slots, gets an explicit confirmation, submits to the CRM and sends the confirmation only after the CRM succeeds.',
+    'A first-time customer from Tokyo writes in Japanese on Instagram. She arrives as a handle — @misaki.sato — because that is all the channel gives us; the assistant answers from approved knowledge, shares an approved photo, offers consultation slots, asks for her name because the booking needs one, gets an explicit confirmation, submits to the CRM and sends the confirmation only after the CRM succeeds.',
   setup: [{ type: 'SELECT_CONVERSATION', conversationId: null }],
   steps: [
     step({
@@ -173,8 +175,11 @@ export const inquiryToBooking: Scenario = {
       id: 'confirms',
       title: 'Customer explicitly confirms',
       message: m08,
-      also: [{ type: 'CUSTOMER_CONFIRMED', conversationId: CID }],
-      note: 'Nothing has been sent to the CRM yet.',
+      also: [
+        { type: 'CUSTOMER_CONFIRMED', conversationId: CID },
+        { type: 'IDENTIFY_CUSTOMER', customerId: 'cust-misaki', name: '佐藤 美咲', readingKo: '사토 미사키 · Sato Misaki' },
+      ],
+      note: 'She gives her name here — the contact changes from @misaki.sato to 佐藤 美咲. Nothing has been sent to the CRM yet.',
       pauseAfter: true,
     }),
     step({

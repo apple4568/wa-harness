@@ -6,9 +6,9 @@ import type { Customer } from '../domain/types.ts';
 
 export const CUSTOMER_LIST: Customer[] = [
   {
+    // First contact on Instagram: we have a handle, not a name. Scenario 1 fills it in
+    // via IDENTIFY_CUSTOMER once she gives it for the booking.
     id: 'cust-misaki',
-    name: '佐藤 美咲',
-    readingKo: '사토 미사키 · Sato Misaki',
     language: 'ja',
     handle: '@misaki.sato',
     location: 'Tokyo, JP',

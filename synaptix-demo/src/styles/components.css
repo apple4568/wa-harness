@@ -743,3 +743,44 @@
     transform: rotate(360deg);
   }
 }
+
+/* --- Language chips -------------------------------------------------------
+   The language a customer writes in is the single most load-bearing attribute
+   in this inbox, so it gets a colour of its own rather than an opaque IETF
+   subtag. Simplified and Traditional Chinese are deliberately different hues:
+   sending the wrong script reads as careless. */
+.lang-chip {
+  background: var(--lang-tint, var(--ink-100));
+  color: var(--lang-ink, var(--text-secondary));
+  border-color: transparent;
+  font-weight: 500;
+}
+.lang-chip--inline {
+  display: inline-flex;
+  align-items: center;
+  height: 16px;
+  padding: 0 5px;
+  border-radius: var(--radius-1);
+  font-size: var(--fs-label);
+  vertical-align: 1px;
+}
+[data-lang='ja'] {
+  --lang-tint: #fde8ef;
+  --lang-ink: #a3255a;
+}
+[data-lang='zh-Hans'] {
+  --lang-tint: #fdeede;
+  --lang-ink: #9a4d09;
+}
+[data-lang='zh-Hant'] {
+  --lang-tint: #e8f0dc;
+  --lang-ink: #4a6414;
+}
+[data-lang='en'] {
+  --lang-tint: var(--cobalt-100);
+  --lang-ink: var(--cobalt-700);
+}
+[data-lang='ko'] {
+  --lang-tint: var(--mint-100);
+  --lang-ink: var(--mint-700);
+}

@@ -38,6 +38,7 @@ export function conversationNeedsHuman(conv: Conversation): boolean {
 function matchesSearch(state: DemoState, conv: Conversation, needle: string): boolean {
   const customer = state.customers[conv.customerId];
   const haystacks: Array<string | undefined> = [customer?.name, customer?.readingKo, customer?.handle];
+  // (an unidentified customer is still findable by handle)
   for (const h of haystacks) if (h && h.toLowerCase().includes(needle)) return true;
   for (const id of state.messageOrder[conv.id] ?? []) {
     const m = state.messages[id];

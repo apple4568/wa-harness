@@ -5,7 +5,7 @@ import { formatDate, formatDateTime, formatTime } from '@/domain/calendar';
 import { useDemo } from '@/state/store';
 import { selectAppointmentForConversation, selectCurrentRequest, selectPendingRequest, selectSlots } from '@/state/selectors';
 import { nextAvailableSlots, nextRequestId } from '@/lib/booking';
-import { DELIVERY_LABEL } from '@/lib/labels';
+import { DELIVERY_LABEL, customerName } from '@/lib/labels';
 import { cn } from '@/lib/cn';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -244,7 +244,7 @@ export function BookingPanel({ conversation: conv, customer }: { conversation: C
           {appointment ? (
             <AppointmentSummary appointment={appointment} slots={state.slots} />
           ) : (
-            <p className="panel__empty">No appointment yet for {customer.name}.</p>
+            <p className="panel__empty">No appointment yet for {customerName(customer)}.</p>
           )}
           {liveAppointment && !inFlow ? (
             <div className="panel__actions" style={{ marginTop: 8 }}>
@@ -378,7 +378,7 @@ export function BookingPanel({ conversation: conv, customer }: { conversation: C
         >
           <dl className="kv kv--boxed">
             <dt>Customer</dt>
-            <dd lang={customer.language}>{customer.name}</dd>
+            <dd lang={customer.name ? customer.language : undefined}>{customerName(customer)}</dd>
             {b.intent === 'cancel' && appointment ? (
               <>
                 <dt>Cancel</dt>

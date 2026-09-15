@@ -1583,3 +1583,30 @@
   height: 12px;
   color: var(--accent);
 }
+
+/* A contact we only have a handle for: shown in mono so it reads as an
+   identifier rather than a person's name. */
+.row__name--handle,
+.thread-header__name .row__name--handle {
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+}
+.thread-header__unknown {
+  cursor: default;
+}
+/* Staff wrote Korean; the assistant translated it before sending. */
+.msg__translated {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--cobalt-700);
+  letter-spacing: 0.02em;
+  cursor: default;
+}
+.msg__translated svg {
+  width: 11px;
+  height: 11px;
+}

@@ -76,6 +76,32 @@ test.describe('scenario 1 · Instagram inquiry → confirmed booking', () => {
     await expect(page.getByTestId('step-label')).toContainText('Complete');
   });
 
+  test('the customer arrives as a handle and is identified only when she gives her name', async ({ page }) => {
+    await gotoDemo(page, { scenario: 'inquiry-to-booking' });
+    await playUntilStep(page, 'inquiry-arrives');
+
+    // Instagram hands us a handle, not a person.
+    let s = await state(page);
+    expect(s.customers['cust-misaki'].name).toBeUndefined();
+    await expect(row(page, CID)).toContainText('@misaki.sato');
+
+    await playUntilStep(page, 'picks-slot');
+    await expect(page.getByTestId('workspace')).toHaveAttribute('data-conversation-id', CID);
+    await expect(page.getByTestId('unidentified')).toBeVisible();
+
+    // She gives it so the booking can be made.
+    await playUntilStep(page, 'confirms');
+    s = await state(page);
+    expect(s.customers['cust-misaki'].name).toBe('佐藤 美咲');
+    await expect(page.getByTestId('unidentified')).toHaveCount(0);
+    await expect(page.getByTestId('thread-header')).toContainText('佐藤 美咲');
+    await expect(row(page, CID)).toContainText('佐藤 美咲');
+
+    // ...and the booking is made in that name.
+    await openBookingPanel(page);
+    await expect(page.getByTestId('booking-panel')).toContainText('佐藤 美咲');
+  });
+
   test('sources chip lists 3 approved items; the reception photo is the approved asset', async ({ page }) => {
     await gotoDemo(page, { scenario: 'inquiry-to-booking' });
     await playUntilStep(page, 'send-reception-photo');

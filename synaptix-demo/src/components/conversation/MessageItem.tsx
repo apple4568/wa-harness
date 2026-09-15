@@ -43,7 +43,8 @@ export const MessageItem = memo(function MessageItem({ message: m, customer, isN
   }
 
   const lang = m.author === 'customer' ? customer.language : m.author === 'assistant' ? customer.language : undefined;
-  const translation = (m.author === 'customer' || m.author === 'assistant') && m.translationKo && showKo ? m.translationKo : undefined;
+  const translation =
+    (m.author === 'customer' || m.author === 'assistant' || m.translatedFromKo) && m.translationKo && showKo ? m.translationKo : undefined;
 
   let body: React.ReactNode = null;
   switch (m.kind) {
@@ -174,13 +175,21 @@ export const MessageItem = memo(function MessageItem({ message: m, customer, isN
       {body}
       {translation ? (
         <div className="msg__translation" lang="ko" data-testid="translation">
-          <span className="msg__translation-tag">KO</span>
+          <span className="msg__translation-tag">{m.translatedFromKo ? 'KO · you wrote' : 'KO'}</span>
           <span>{translation}</span>
         </div>
       ) : null}
       <div className={cn('msg__foot', out && 'msg__foot--out')}>
         <span>{formatTime(m.at)}</span>
         {out ? <DeliveryTick delivery={m.delivery} /> : null}
+        {m.translatedFromKo ? (
+          <Tooltip content="You wrote this in Korean. The assistant translated it into the customer's language before sending.">
+            <span className="msg__translated" data-testid="translated-marker" tabIndex={0}>
+              <Languages />
+              translated
+            </span>
+          </Tooltip>
+        ) : null}
         {m.needsLanguageReview ? (
           <Tooltip content="Copy flagged for review by a fluent speaker — the fixed translation may not capture nuance.">
             <span className="msg__review" data-testid="review-marker" tabIndex={0}>

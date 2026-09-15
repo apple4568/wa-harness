@@ -3,6 +3,7 @@ import type { Conversation, Customer } from '@/domain/types';
 import { dateKey, formatDate } from '@/domain/calendar';
 import { useDemo } from '@/state/store';
 import { selectMessages } from '@/state/selectors';
+import { customerName } from '@/lib/labels';
 import { MessageItem } from './MessageItem';
 import { AssistantActivityIndicator, TypingIndicator } from './Indicators';
 
@@ -46,7 +47,7 @@ export function MessageList({ conversation: conv, customer }: { conversation: Co
       <div className="thread__col">
         {items}
         {conv.ownership === 'ai' ? <AssistantActivityIndicator activity={conv.assistant} /> : null}
-        {conv.customerTyping ? <TypingIndicator name={customer.name} /> : null}
+        {conv.customerTyping ? <TypingIndicator name={customerName(customer)} /> : null}
       </div>
     </div>
   );

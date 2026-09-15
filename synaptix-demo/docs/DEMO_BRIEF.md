@@ -39,7 +39,7 @@ Path alias: `@/` → `src/`. Type contract: `src/domain/types.ts` (read it fully
 ### Conversations (ids are fixed; customers are fictional)
 | id | channel | customer | lang | role in demo |
 |---|---|---|---|---|
-| `conv-ig-misaki` | instagram | 佐藤 美咲 Sato Misaki, Tokyo | ja | **Scenario 1** — created by the scenario (not in seed) |
+| `conv-ig-misaki` | instagram | `@misaki.sato` → 佐藤 美咲 Sato Misaki, Tokyo | ja | **Scenario 1** — created by the scenario (not in seed); starts **unidentified** and is named at step `confirms` |
 | `conv-line-chiaying` | line | 林佳穎 Lin Chia-ying, Taipei | zh-Hant | **Scenario 2** human takeover (asks whether a treatment suits her skin → individual judgment) |
 | `conv-wechat-wei` | wechat | 王伟 Wang Wei, Shanghai | zh-Hans | **Scenario 3** after hours (asks about combining a treatment with his medication → unsupported) |
 | `conv-wa-emily` | whatsapp | Emily Carter, Sydney | en | **Scenario 4** — has appointment `MD-24811` on `2026-09-18T15:00` |
@@ -83,7 +83,23 @@ Customer attachments (`kind: 'customer_attachment'`) use `/photos/customer-attac
   and `settings.aiPaused` is false; `ADD_MESSAGE`/`SEND_STAFF_MESSAGE` with a `photoId` require an **approved** photo;
   `SUBMIT_BOOKING` is idempotent per `requestId` and ignored while a request is pending; reschedule mutates the same
   `Appointment`; `APPROVE_KNOWLEDGE` requires `role === 'manager'`; `SET_DELIVERY` on the confirmation message updates
-  `booking.confirmationDelivery` and moves stage to `confirmation_sent` when delivered.
+  `booking.confirmationDelivery` and moves stage to `confirmation_sent` when delivered;
+  `IDENTIFY_CUSTOMER` fills in a customer's `name`/`readingKo` and is ignored for an unknown id.
+
+### Identity and language (why these exist)
+- `Customer.name` is **optional**. A channel gives us a handle (Instagram), a phone number (WhatsApp) or a pseudonymous
+  id (WeChat) — not a person. Display through `customerName()` (falls back to the handle) and `isUnidentified()`; never
+  read `customer.name` directly in a component. Scenario 1 asks for the name because the booking needs one, then
+  dispatches `IDENTIFY_CUSTOMER`.
+- Staff write **Korean**; the assistant translates outbound. `SEND_STAFF_MESSAGE` takes `text` (what the staff member
+  typed) and optional `translatedText` (what the customer receives). The stored `Message` keeps `text` in the customer's
+  language and the Korean original in `translationKo`, flagged `translatedFromKo`. So `Message.text` is *always* what was
+  sent to the customer, whoever wrote it.
+- Interactive elements are **never** platform buttons. Slot offers go out as numbered plain text (① ② ③) and the customer
+  replies in words; the chips in the staff UI are a rendering of that text. This is what makes one flow work unchanged on
+  Instagram, WhatsApp, LINE and WeChat without per-platform interactive templates.
+- Language is surfaced as a readable, colour-coded chip (`LANGUAGE_SHORT` + `[data-lang]`), not a raw IETF subtag.
+  Simplified and Traditional Chinese are deliberately distinct: sending the wrong script reads as careless.
 
 ## Visual system (UI agent — details in its prompt)
 Brand: Ink neutrals, Cobalt `#2436E0` as the single interaction accent, Pulse Mint only on Ink. IBM Plex Sans KR primary,

@@ -87,6 +87,28 @@ test.describe('scenario 2 · human takeover', () => {
     await expect(page.locator('[data-testid="message"][data-author="system"]').last()).toContainText('Returned to AI');
   });
 
+  test('the scripted staff reply is written in Korean and delivered in the customer\'s language', async ({ page }) => {
+    await gotoDemo(page, { scenario: 'human-takeover' });
+    await playUntilStep(page, 'staff-replies');
+
+    const s = await state(page);
+    const order = s.messageOrder[CID];
+    const sent = s.messages[order[order.length - 1]];
+
+    expect(sent.author).toBe('staff');
+    expect(sent.translatedFromKo).toBe(true);
+    // The customer reads Traditional Chinese, never the Korean the staff member typed.
+    expect(sent.text).toContain('諮詢師');
+    expect(sent.text).not.toMatch(/[가-힣]/);
+    // Staff keep their own Korean alongside it.
+    expect(sent.translationKo).toContain('상담사');
+
+    const staffMsg = page.locator('[data-testid="message"][data-author="staff"]').last();
+    await expect(staffMsg).toContainText('諮詢師');
+    await expect(staffMsg.getByTestId('translated-marker')).toBeVisible();
+    await expect(staffMsg.getByTestId('translation')).toContainText('상담사');
+  });
+
   test('explore mode: take over Daniel, return to AI; taking over while composing resets activity', async ({ page }) => {
     await gotoDemo(page, { mode: 'explore' });
     await row(page, 'conv-wa-daniel').click();

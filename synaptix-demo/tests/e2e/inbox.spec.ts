@@ -72,6 +72,18 @@ test.describe('inbox', () => {
     await search.fill('미사키');
     await expect(page.locator(ROWS)).toHaveCount(0);
     await playUntilStep(page, 'inquiry-arrives');
+
+    // She arrives unidentified: Instagram gives us a handle, not a name. The Korean
+    // reading cannot match yet, but the handle can.
+    await expect(page.locator(ROWS)).toHaveCount(0);
+    await search.fill('misaki.sato');
+    expect(await visibleIds(page)).toEqual(['conv-ig-misaki']);
+    await expect(row(page, 'conv-ig-misaki')).toContainText('@misaki.sato');
+    await expect(row(page, 'conv-ig-misaki')).not.toContainText('佐藤 美咲');
+
+    // She gives her name to complete the booking; the contact fills in from there.
+    await playUntilStep(page, 'confirms');
+    await search.fill('미사키');
     expect(await visibleIds(page)).toEqual(['conv-ig-misaki']);
     await expect(row(page, 'conv-ig-misaki')).toContainText('佐藤 美咲');
   });
