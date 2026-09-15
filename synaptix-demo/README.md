@@ -62,6 +62,9 @@ for questions.
 
 ## What is simulated, and what the demo does not do
 
+Screenshots of the main states are in [`docs/screenshots/`](docs/screenshots/) and a backup recording of the
+walkthrough (scenarios 1 and 2) is [`docs/recording/walkthrough.webm`](docs/recording/walkthrough.webm).
+
 See [`docs/verification.md`](docs/verification.md) for the verification summary and the explicit list of
 simulated capabilities and remaining limitations, and [`docs/assets.md`](docs/assets.md) for asset provenance
 and licences.

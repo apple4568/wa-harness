@@ -324,7 +324,7 @@ test.describe('reducer · booking', () => {
     ]);
     expect(s0.crm.requests['req-hina']).toMatchObject({ status: 'reconciled', reconciledOutcome: 'not_created' });
     expect(s0.conversations[HINA].booking.stage).toBe('customer_confirmed');
-    expect(s0.conversations[HINA].booking.requestId).toBeUndefined();
+    expect(s0.conversations[HINA].booking.requestId).toBe('req-hina');
     expect(appointmentsFor(s0, HINA)).toHaveLength(0);
 
     // Same id again → ignored; a new id → pending, and a success creates exactly one appointment.

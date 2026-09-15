@@ -20,6 +20,7 @@ export function PresenterBar() {
 
   const stepText = (() => {
     if (!player.scenario) return guided ? 'Select a scenario to begin' : 'Explore mode · free interaction';
+    if (!guided) return `Explore mode · scenario paused at step ${done} of ${total}`;
     if (player.status === 'complete') return `Complete · ${total} of ${total}`;
     const step = player.nextStep;
     return step ? `Step ${done + 1} of ${total} · ${step.title}` : `Step ${done} of ${total}`;

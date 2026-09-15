@@ -1,6 +1,6 @@
 import { Clock, Hand, TriangleAlert, UserRound } from 'lucide-react';
 import type { Conversation } from '@/domain/types';
-import { formatDateTime, formatTime } from '@/domain/calendar';
+import { WEEKDAY_LABELS, formatDateTime, formatTime, weekdayOf } from '@/domain/calendar';
 import { STAFF_BY_ROLE } from '@/data/staff';
 import { useDemo } from '@/state/store';
 import { selectClinicOpen, selectNextOpening } from '@/state/selectors';
@@ -70,9 +70,26 @@ export function AfterHoursBanner() {
         <span className="meta">
           {' '}
           · The customer was told when to expect a reply. {open ? 'The clinic is open now.' : `Next opening ${formatDateTime(next.at)}`}
-          {next.skipped.length > 0 && !open ? ` (skips ${next.skipped.map((s) => s.reason).join(', ')})` : ''}
+          {next.skipped.length > 0 && !open ? ` (skips ${describeSkipped(next.skipped)})` : ''}
         </span>
       </div>
     </div>
   );
+}
+
+/** "Thu–Sat Chuseok (추석), Sun closed" — groups consecutive skipped days that share a reason. */
+function describeSkipped(skipped: Array<{ date: string; reason: string }>): string {
+  const groups: Array<{ reason: string; days: string[] }> = [];
+  for (const s of skipped) {
+    const day = WEEKDAY_LABELS[weekdayOf(s.date)];
+    const last = groups[groups.length - 1];
+    if (last && last.reason === s.reason) last.days.push(day);
+    else groups.push({ reason: s.reason, days: [day] });
+  }
+  return groups
+    .map((g) => {
+      const span = g.days.length > 1 ? `${g.days[0]}–${g.days[g.days.length - 1]}` : g.days[0];
+      return g.reason === 'Closed' ? `${span} closed` : `${span} ${g.reason}`;
+    })
+    .join(', ');
 }

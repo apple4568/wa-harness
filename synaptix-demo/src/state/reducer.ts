@@ -448,7 +448,9 @@ export function reducer(state: DemoState, action: DemoAction): DemoState {
       let next: DemoState = { ...state, crm: { ...state.crm, requests: { ...state.crm.requests, [request.id]: reconciled } } };
       const conv = next.conversations[request.conversationId];
       if (conv && conv.booking.requestId === request.id) {
-        next = patchBooking(next, conv.id, { stage: 'customer_confirmed', requestId: undefined });
+        // Keep requestId so the panel can show the reconciled-not-created outcome; a resubmission
+        // uses a fresh request id (SUBMIT_BOOKING only blocks on pending/duplicate ids).
+        next = patchBooking(next, conv.id, { stage: 'customer_confirmed' });
       }
       return next;
     }
