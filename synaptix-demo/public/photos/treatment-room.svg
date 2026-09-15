@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Illustration of a treatment room with a reclining bed, cabinet and curtain">
+  <!-- Illustrative rendering created for the Synaptix demo. Not a photograph. No devices depicted. -->
+  <rect width="800" height="500" fill="#F1F3F7"/>
+  <rect y="360" width="800" height="140" fill="#E1E5EC"/>
+  <rect y="358" width="800" height="3" fill="#C4CAD6"/>
+  <!-- ceiling light panel -->
+  <rect x="290" y="34" width="220" height="16" rx="8" fill="#FFFFFF" stroke="#C4CAD6" stroke-width="3"/>
+  <ellipse cx="400" cy="120" rx="200" ry="70" fill="#FFFFFF" opacity="0.5"/>
+  <!-- privacy curtain on the right -->
+  <rect x="560" y="30" width="200" height="330" fill="#E1E5EC"/>
+  <g stroke="#C4CAD6" stroke-width="3" fill="none">
+    <path d="M590 30 q10 165 0 330"/><path d="M630 30 q-10 165 0 330"/><path d="M670 30 q10 165 0 330"/><path d="M710 30 q-10 165 0 330"/><path d="M750 30 q8 165 0 330"/>
+  </g>
+  <rect x="540" y="22" width="240" height="8" rx="4" fill="#3B4459"/>
+  <!-- wall art -->
+  <rect x="200" y="90" width="90" height="70" rx="4" fill="#FFFFFF" stroke="#C4CAD6" stroke-width="3"/>
+  <circle cx="245" cy="125" r="16" fill="#E1E5EC"/>
+  <circle cx="254" cy="118" r="5" fill="#2436E0"/>
+  <!-- cabinet on the left -->
+  <rect x="60" y="210" width="120" height="150" rx="6" fill="#FFFFFF" stroke="#C4CAD6" stroke-width="3"/>
+  <line x1="60" y1="260" x2="180" y2="260" stroke="#C4CAD6" stroke-width="3"/>
+  <line x1="60" y1="310" x2="180" y2="310" stroke="#C4CAD6" stroke-width="3"/>
+  <rect x="106" y="232" width="28" height="6" rx="3" fill="#3B4459"/>
+  <rect x="106" y="282" width="28" height="6" rx="3" fill="#3B4459"/>
+  <rect x="106" y="332" width="28" height="6" rx="3" fill="#3B4459"/>
+  <rect x="96" y="180" width="30" height="30" rx="5" fill="#C4CAD6"/>
+  <ellipse cx="111" cy="170" rx="20" ry="12" fill="#31E3B5"/>
+  <ellipse cx="100" cy="158" rx="9" ry="14" fill="#31E3B5"/>
+  <ellipse cx="122" cy="156" rx="9" ry="15" fill="#31E3B5"/>
+  <rect x="140" y="188" width="24" height="22" rx="3" fill="#E1E5EC" stroke="#C4CAD6" stroke-width="2"/>
+  <!-- treatment bed: back slightly raised -->
+  <path d="M232 246 q6 -22 28 -22 h84 l14 46 h-126 z" fill="#FFFFFF" stroke="#C4CAD6" stroke-width="3"/>
+  <rect x="330" y="268" width="230" height="44" rx="20" fill="#FFFFFF" stroke="#C4CAD6" stroke-width="3"/>
+  <rect x="246" y="268" width="100" height="44" rx="14" fill="#FFFFFF" stroke="#C4CAD6" stroke-width="3"/>
+  <rect x="262" y="232" width="60" height="10" rx="5" fill="#C4CAD6"/>
+  <rect x="330" y="290" width="230" height="10" rx="5" fill="#2436E0" opacity="0.85"/>
+  <rect x="360" y="312" width="110" height="46" rx="6" fill="#3B4459"/>
+  <rect x="340" y="352" width="150" height="8" rx="4" fill="#3B4459"/>
+  <!-- stool -->
+  <ellipse cx="520" cy="322" rx="24" ry="9" fill="#C4CAD6"/>
+  <rect x="517" y="328" width="6" height="26" fill="#3B4459"/>
+  <path d="M500 356 h40" stroke="#3B4459" stroke-width="5" stroke-linecap="round"/>
+  <!-- floor reflection -->
+  <ellipse cx="400" cy="428" rx="230" ry="18" fill="#C4CAD6" opacity="0.5"/>
+</svg>

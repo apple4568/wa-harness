@@ -21,5 +21,3 @@ export function installTestHooks(hooks: SynaptixTestHooks): void {
   if (typeof window === 'undefined') return;
   window.__synaptix = hooks;
 }
-
-export {};

@@ -23,6 +23,12 @@ import type {
 } from '@/domain/types';
 import { nextOpening } from '@/domain/calendar';
 import { createInitialState } from '@/data/seed';
+import { STAFF_BY_ID } from '@/data/staff';
+
+/** Scenarios pass staff ids (`staff-seoyeon`) or names; system lines always show the name. */
+function staffLabel(by: string): string {
+  return STAFF_BY_ID[by]?.name ?? by;
+}
 
 /* ---------------------------------------------------------------------- */
 /* Helpers                                                                 */
@@ -341,13 +347,13 @@ export function reducer(state: DemoState, action: DemoAction): DemoState {
       const conv = state.conversations[action.conversationId];
       if (!conv || conv.ownership === 'human') return state;
       const next = patchConversation(state, conv.id, { ownership: 'human', assistant: { kind: 'idle' } });
-      return appendSystemLine(next, conv.id, `${action.by} took over · AI paused for this conversation`);
+      return appendSystemLine(next, conv.id, `${staffLabel(action.by)} took over · AI paused for this conversation`);
     }
     case 'RETURN_TO_AI': {
       const conv = state.conversations[action.conversationId];
       if (!conv || conv.ownership === 'ai') return state;
       const next = patchConversation(state, conv.id, { ownership: 'ai', handover: undefined, assistant: { kind: 'idle' } });
-      return appendSystemLine(next, conv.id, `Returned to AI · ${action.by}`);
+      return appendSystemLine(next, conv.id, `Returned to AI · ${staffLabel(action.by)}`);
     }
 
     /* --- after hours --- */

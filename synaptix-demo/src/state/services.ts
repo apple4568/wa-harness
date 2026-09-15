@@ -9,7 +9,7 @@
  * Timers are keyed by id and stamped with `guided.runId`; a runId change clears them all and any
  * callback whose runId is stale is a no-op.
  */
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import type { DemoAction, DemoState } from '@/domain/types';
 import type { PlaybackSpeed } from './player';
 
@@ -25,7 +25,9 @@ export const SERVICE_DELAYS = {
 
 export function useSimulatedServices(state: DemoState, dispatch: (action: DemoAction) => void, speed: PlaybackSpeed = 'normal'): void {
   const stateRef = useRef(state);
-  stateRef.current = state;
+  useLayoutEffect(() => {
+    stateRef.current = state;
+  });
   const timersRef = useRef<Map<string, Scheduled>>(new Map());
   const runId = state.guided.runId;
 

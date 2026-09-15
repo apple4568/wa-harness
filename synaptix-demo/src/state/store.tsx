@@ -7,7 +7,7 @@
  *   ?scenario=<id>     → start that scenario (paused) after mount
  *   ?mode=explore      → switch to explore mode after mount
  */
-import { createContext, useContext, useEffect, useMemo, useReducer, useRef, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useLayoutEffect, useMemo, useReducer, useRef, type ReactNode } from 'react';
 import type { DemoAction, DemoState, Dispatch, ScenarioId } from '@/domain/types';
 import { createInitialState } from '@/data/seed';
 import { reducer } from './reducer';
@@ -63,9 +63,11 @@ export function DemoProvider({ children, initialState, playbackSpeed }: DemoProv
   useSimulatedServices(state, dispatch, speed);
 
   const stateRef = useRef(state);
-  stateRef.current = state;
   const playerRef = useRef(player);
-  playerRef.current = player;
+  useLayoutEffect(() => {
+    stateRef.current = state;
+    playerRef.current = player;
+  });
 
   // Test hooks — `getState` always reads the latest state; `player` is refreshed whenever it changes.
   useEffect(() => {

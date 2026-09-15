@@ -6,7 +6,7 @@
  * at scheduling time and re-reads the latest state through a ref before acting. Any
  * reset / scenario switch / mode switch bumps runId, which makes stale callbacks no-ops.
  */
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
 import type { DemoAction, DemoMode, DemoState, PlaybackStatus, Scenario, ScenarioId, ScenarioStep } from '@/domain/types';
 import { SCENARIOS, SCENARIO_LIST } from '@/scenarios';
 
@@ -48,10 +48,13 @@ export function usePlayerController(
   dispatch: (action: DemoAction) => void,
   speed: PlaybackSpeed = 'normal',
 ): Player {
+  // Latest committed state/speed for timer callbacks and handlers (synced before any effect runs).
   const stateRef = useRef(state);
-  stateRef.current = state;
   const speedRef = useRef(speed);
-  speedRef.current = speed;
+  useLayoutEffect(() => {
+    stateRef.current = state;
+    speedRef.current = speed;
+  });
 
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   /** Guards `next()` against applying the same step twice before React re-renders. */

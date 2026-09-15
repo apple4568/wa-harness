@@ -224,14 +224,16 @@ test.describe('scenario definitions', () => {
 
   test('scenario 3 · after-hours queues Wei and reopens on Mon 28 Sep 10:00', () => {
     const scenario = SCENARIOS['after-hours'];
-    const { final, afterStep } = runScenario(scenario);
+    const { final, afterStep, beforeStep } = runScenario(scenario);
     const id = 'conv-wechat-wei';
     const firstPause = scenario.steps.findIndex((s) => s.pauseAfter);
     expect(firstPause, 'after-hours has a pause point').toBeGreaterThanOrEqual(0);
-    expect(afterStep[firstPause].clock).toBe('2026-09-23T21:40:00');
+    expect(beforeStep[0].clock).toBe('2026-09-23T21:40:00'); // setup sets the after-hours clock
+    expect(afterStep[firstPause].clock.startsWith('2026-09-23T21:')).toBe(true);
     expect(afterStep[firstPause].conversations[id].afterHoursQueued).toBe(true);
+    expect(afterStep[firstPause].conversations[id].ownership).not.toBe('ai');
     expect(afterStep.some((s) => s.clock === '2026-09-28T10:00:00')).toBe(true);
-    expect(final.clock).toBe('2026-09-28T10:00:00');
+    expect(final.clock.startsWith('2026-09-28T10:')).toBe(true); // staff follows up shortly after opening
     expect(final.conversations[id].afterHoursQueued).toBe(false);
     // The medication question stays unanswered by the assistant: the draft item is never approved by the story.
     expect(final.knowledge['kb-medication-questions'].state).toBe('draft');
