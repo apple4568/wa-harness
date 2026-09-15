@@ -437,6 +437,7 @@ export const CONVERSATION_LIST: Conversation[] = [
     account: CHANNEL_ACCOUNTS.wechat,
     customerId: 'cust-meiling',
     ownership: 'human',
+    handledBy: 'staff-seoyeon',
     assistant: { kind: 'idle' },
     customerTyping: false,
     unread: 0,

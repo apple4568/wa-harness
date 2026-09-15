@@ -346,13 +346,13 @@ export function reducer(state: DemoState, action: DemoAction): DemoState {
     case 'TAKE_OVER': {
       const conv = state.conversations[action.conversationId];
       if (!conv || conv.ownership === 'human') return state;
-      const next = patchConversation(state, conv.id, { ownership: 'human', assistant: { kind: 'idle' } });
+      const next = patchConversation(state, conv.id, { ownership: 'human', handledBy: action.by, assistant: { kind: 'idle' } });
       return appendSystemLine(next, conv.id, `${staffLabel(action.by)} took over · AI paused for this conversation`);
     }
     case 'RETURN_TO_AI': {
       const conv = state.conversations[action.conversationId];
       if (!conv || conv.ownership === 'ai') return state;
-      const next = patchConversation(state, conv.id, { ownership: 'ai', handover: undefined, assistant: { kind: 'idle' } });
+      const next = patchConversation(state, conv.id, { ownership: 'ai', handover: undefined, handledBy: undefined, assistant: { kind: 'idle' } });
       return appendSystemLine(next, conv.id, `Returned to AI · ${staffLabel(action.by)}`);
     }
 

@@ -104,7 +104,7 @@ export const ConversationRow = memo(function ConversationRow({
               </span>
             ) : (
               <span className="row__own row__own--human" title="A staff member is handling this conversation">
-                {staffInitials(lastHuman ? state.role === 'manager' ? 'manager-jihoon' : 'staff-seoyeon' : '')}
+                {staffInitials(lastHuman ? (conv.handledBy ?? 'staff-seoyeon') : '')}
               </span>
             )}
             <Count value={conv.unread} />

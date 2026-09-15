@@ -124,6 +124,8 @@ export interface Conversation {
   ownership: Ownership;
   assistant: AssistantActivity;
   handover?: HandoverSummary;
+  /** Staff id or name currently handling the conversation (set by TAKE_OVER, cleared by RETURN_TO_AI). */
+  handledBy?: string;
   /** Customer typing indicator (scripted). */
   customerTyping: boolean;
   unread: number;
