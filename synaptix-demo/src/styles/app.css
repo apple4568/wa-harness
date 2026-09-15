@@ -27,16 +27,16 @@
 
 /* ---------- Presenter bar ---------- */
 .presenter {
-  display: grid;
-  grid-template-columns: minmax(200px, 1fr) auto minmax(200px, 1fr);
+  display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   height: var(--presenter-h);
   padding: 0 12px;
   background: var(--ink-950);
   color: var(--white);
   border-bottom: 1px solid var(--ink-900);
   min-width: 0;
+  overflow: hidden;
 }
 .presenter__left,
 .presenter__center,
@@ -46,10 +46,12 @@
   gap: 8px;
   min-width: 0;
 }
+.presenter__left,
 .presenter__right {
-  justify-content: flex-end;
+  flex: none;
 }
 .presenter__center {
+  flex: 1 1 auto;
   justify-content: center;
 }
 .presenter__brand {
@@ -75,19 +77,21 @@
   display: flex;
   align-items: center;
   gap: 2px;
+  flex: none;
 }
 .presenter__divider {
   width: 1px;
   height: 18px;
   background: rgba(255, 255, 255, 0.14);
-  margin: 0 4px;
+  margin: 0 2px;
+  flex: none;
 }
 .presenter__step {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  min-width: 180px;
-  max-width: 300px;
+  flex: 0 1 260px;
+  min-width: 90px;
 }
 .presenter__step-label {
   font-family: var(--font-mono);
@@ -113,12 +117,30 @@
 .presenter__progress i.is-done {
   background: var(--mint-400);
 }
+/* Stacked label + value blocks (clock, role) — fit inside the 40 px bar */
+.presenter__stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  min-width: 0;
+}
+.presenter__stack-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+  white-space: nowrap;
+}
 .presenter__clock {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono);
   font-size: var(--fs-label);
+  line-height: 1.2;
   color: var(--ink-300);
   white-space: nowrap;
 }
@@ -126,18 +148,13 @@
   color: var(--white);
   font-weight: 500;
 }
-.presenter__role {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.presenter__role .tabs__trigger {
+  height: 20px;
+  padding: 0 8px;
+  font-size: 11px;
 }
-.presenter__role-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink-500);
-  white-space: nowrap;
+.presenter__role .tabs__list {
+  padding: 1px;
 }
 .demo-chip {
   display: inline-flex;
@@ -152,26 +169,16 @@
   letter-spacing: 0.02em;
   color: var(--mint-400);
   white-space: nowrap;
+  flex: none;
 }
 @media (max-width: 1360px) {
   .presenter__account {
     display: none;
   }
-  .presenter__step {
-    min-width: 120px;
-    max-width: 200px;
-  }
 }
 @media (max-width: 1199px) {
   .presenter {
-    grid-template-columns: auto 1fr auto;
     gap: 8px;
-  }
-  .presenter__clock-text {
-    display: none;
-  }
-  .presenter__role-label {
-    display: none;
   }
   .presenter__wordmark {
     display: none;
@@ -179,12 +186,18 @@
   .presenter__brand {
     padding-right: 8px;
   }
+  .presenter__reset-text {
+    display: none;
+  }
 }
 @media (max-width: 1000px) {
   .presenter__step {
     display: none;
   }
   .demo-chip span {
+    display: none;
+  }
+  .presenter__clock-text {
     display: none;
   }
 }
