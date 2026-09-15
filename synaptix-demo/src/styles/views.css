@@ -598,9 +598,15 @@
   min-width: 0;
 }
 .kb-sample__path {
+  display: block;
+  margin-top: 1px;
   font-family: var(--font-mono);
   font-size: 10px;
+  font-weight: 400;
   color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .kb-sample svg {
   width: 14px;
@@ -616,7 +622,8 @@
   border: 1px dashed var(--border-strong);
   border-radius: var(--radius-2);
   background: var(--ink-50);
-  min-height: 100%;
+  flex: 1;
+  min-height: 0;
 }
 .kb-upload.is-active {
   border-style: solid;
@@ -884,6 +891,7 @@
 }
 .st-date {
   width: 150px;
+  height: 30px;
 }
 
 /* Holidays */
@@ -944,7 +952,11 @@
   border-bottom: 0;
 }
 .st-row--esc {
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1.3fr) auto;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) minmax(0, 1.5fr) auto;
+}
+.st-row--esc .st-row__via {
+  white-space: normal;
+  line-height: 1.4;
 }
 .st-row--conn {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) auto;
