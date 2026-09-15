@@ -1,0 +1,113 @@
+/*
+ * Synaptix design tokens — light theme only (brand_spec.md §10–12).
+ * Fonts are bundled via src/fonts.ts (@fontsource); nothing is fetched remotely.
+ */
+:root {
+  color-scheme: light;
+
+  /* ---- Brand palette ---- */
+  --ink-950: #0b1020;
+  --ink-900: #141b2d;
+  --ink-700: #3b4459;
+  --ink-500: #6b7385;
+  --ink-300: #c4cad6;
+  --ink-200: #e1e5ec;
+  --ink-100: #f1f3f7;
+  --ink-50: #f8f9fb;
+  --white: #ffffff;
+
+  --cobalt-700: #1c2bc7;
+  --cobalt-600: #2436e0;
+  --cobalt-400: #6b7cff;
+  --cobalt-100: #e4e7ff;
+  --cobalt-50: #f1f3ff;
+
+  --mint-400: #31e3b5;
+  --mint-700: #0b6b55;
+  --mint-100: #ddf9f1;
+
+  --success-600: #177e5c;
+  --success-100: #e2f5ec;
+  --warning-600: #b45309;
+  --warning-100: #fdf0df;
+  --warning-050: #fef8ee;
+  --error-600: #c8281b;
+  --error-100: #fbe4e2;
+
+  /* ---- Semantic aliases ---- */
+  --bg-canvas: var(--white);
+  --bg-surface: var(--ink-50);
+  --bg-surface-2: var(--ink-100);
+  --bg-inverse: var(--ink-950);
+  --text-primary: var(--ink-950);
+  --text-secondary: var(--ink-700);
+  --text-muted: var(--ink-500);
+  --text-inverse: var(--white);
+  --text-inverse-muted: var(--ink-300);
+  --border: var(--ink-200);
+  --border-strong: var(--ink-300);
+  --border-subtle: var(--ink-100);
+  --accent: var(--cobalt-600);
+  --accent-hover: var(--cobalt-700);
+  --accent-tint: var(--cobalt-100);
+  --accent-tint-soft: var(--cobalt-50);
+  --pulse: var(--mint-400);
+  --pulse-text: var(--mint-700);
+  --focus-ring: var(--cobalt-600);
+
+  /* ---- Spacing (4-base) ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+
+  /* ---- Radius (kept small; no oversized cards) ---- */
+  --radius-1: 4px;
+  --radius-2: 6px;
+  --radius-3: 8px;
+  --radius-full: 999px;
+
+  /* ---- Typography ---- */
+  --font-ui: 'IBM Plex Sans KR', 'Noto Sans JP', 'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --fs-label: 11px; /* mono labels */
+  --fs-meta: 12px;
+  --fs-body: 13px;
+  --fs-message: 14px;
+  --fs-title: 15px;
+  --fs-title-lg: 16px;
+  --lh-tight: 1.25;
+  --lh-body: 1.45;
+  --lh-message: 1.55;
+
+  /* ---- Layout ---- */
+  --presenter-h: 40px;
+  --rail-w: 200px;
+  --rail-w-collapsed: 52px;
+  --list-w: 330px;
+  --list-w-min: 280px;
+  --panel-w: 320px;
+  --message-col-max: 720px;
+  --row-h: 66px;
+
+  /* ---- Motion ("Snap, don't float") ---- */
+  --dur-micro: 150ms;
+  --dur-base: 220ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ---- Elevation (flat system; only overlays lift) ---- */
+  --shadow-overlay: 0 1px 2px rgba(11, 16, 32, 0.06), 0 8px 24px rgba(11, 16, 32, 0.12);
+  --shadow-popover: 0 1px 2px rgba(11, 16, 32, 0.06), 0 4px 16px rgba(11, 16, 32, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-micro: 0ms;
+    --dur-base: 0ms;
+  }
+}
