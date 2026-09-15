@@ -1,7 +1,7 @@
 import { BookOpen, Inbox, Settings } from 'lucide-react';
 import type { View } from '@/domain/types';
 import { STAFF_BY_ROLE } from '@/data/staff';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { selectNeedsHumanCount } from '@/state/selectors';
 import { CHANNEL_LABEL, CHANNEL_ORDER, CONNECTION_LABEL } from '@/lib/labels';
 import { cn } from '@/lib/cn';

@@ -2,7 +2,7 @@ import { Clock, Image } from 'lucide-react';
 import { memo } from 'react';
 import type { Conversation, Message } from '@/domain/types';
 import { formatRelative } from '@/domain/calendar';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { LANGUAGE_TAG, staffInitials } from '@/lib/labels';
 import { cn } from '@/lib/cn';
 import { ChannelGlyph, NodeGlyph } from '@/components/icons/channels';

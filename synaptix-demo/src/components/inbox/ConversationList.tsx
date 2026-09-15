@@ -1,7 +1,7 @@
 import { Search, UserRound } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, type KeyboardEvent } from 'react';
 import type { ChannelFilter } from '@/domain/types';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { selectNeedsHumanCount, selectVisibleConversations } from '@/state/selectors';
 import { CHANNEL_LABEL, CHANNEL_ORDER } from '@/lib/labels';
 import { cn } from '@/lib/cn';

@@ -1,7 +1,7 @@
 import { CalendarDays, Hand, MapPin, Undo2, UserRound } from 'lucide-react';
 import type { Conversation, Customer } from '@/domain/types';
 import { STAFF_BY_ROLE } from '@/data/staff';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { CHANNEL_LABEL, LANGUAGE_LABEL, LANGUAGE_TAG, OWNERSHIP_LABEL } from '@/lib/labels';
 import { cn } from '@/lib/cn';
 import { ChannelGlyph, NodeGlyph } from '@/components/icons/channels';
@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { SwitchField } from '@/components/ui/switch';
 import { Tooltip } from '@/components/ui/tooltip';
-import { useTranslationToggle } from './translationToggle';
+import { useTranslationToggle } from './translationContext';
 
 export function OwnershipPill({ ownership }: { ownership: Conversation['ownership'] }) {
   return (
@@ -39,24 +39,21 @@ export function ThreadHeader({ conversation: conv, customer }: { conversation: C
               </span>
             ) : null}
           </div>
-          <div className="thread-header__sub">
+          <div className="thread-header__sub" title={`${CHANNEL_LABEL[conv.channel]} · ${conv.account} · ${customer.handle} · ${LANGUAGE_LABEL[customer.language]}${customer.location ? ` · ${customer.location}` : ''}`}>
             <ChannelGlyph channel={conv.channel} size={12} />
-            <span>
-              {CHANNEL_LABEL[conv.channel]} · {conv.account}
+            <span className="truncate">
+              {CHANNEL_LABEL[conv.channel]} · {conv.account} · {customer.handle} ·{' '}
+              <Tooltip content={LANGUAGE_LABEL[customer.language]}>
+                <span className="mono">{LANGUAGE_TAG[customer.language]}</span>
+              </Tooltip>
+              {customer.location ? (
+                <>
+                  {' · '}
+                  <MapPin style={{ display: 'inline', verticalAlign: '-1px' }} />
+                  {customer.location}
+                </>
+              ) : null}
             </span>
-            <span className="sep">·</span>
-            <span>{customer.handle}</span>
-            <span className="sep">·</span>
-            <Tooltip content={LANGUAGE_LABEL[customer.language]}>
-              <span className="mono">{LANGUAGE_TAG[customer.language]}</span>
-            </Tooltip>
-            {customer.location ? (
-              <>
-                <span className="sep">·</span>
-                <MapPin />
-                <span>{customer.location}</span>
-              </>
-            ) : null}
           </div>
         </div>
       </div>
@@ -84,7 +81,11 @@ export function ThreadHeader({ conversation: conv, customer }: { conversation: C
         >
           <CalendarDays />
           Consultation
-          {conv.booking.stage !== 'idle' ? <Badge tone={conv.booking.stage === 'needs_review' ? 'warning' : 'cobalt'}>{conv.booking.stage === 'needs_review' ? 'Review' : 'In progress'}</Badge> : null}
+          {conv.booking.stage === 'needs_review' ? (
+            <Badge tone="warning">Review</Badge>
+          ) : conv.booking.stage !== 'idle' && conv.booking.stage !== 'confirmation_sent' ? (
+            <Badge tone="cobalt">In progress</Badge>
+          ) : null}
         </Button>
         <SwitchField label="Korean translation" labelPosition="left" checked={showKo} onCheckedChange={setShowKo} testId="translation-toggle" />
       </div>

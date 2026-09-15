@@ -2,7 +2,7 @@ import { Bell } from 'lucide-react';
 import { useMemo } from 'react';
 import type { AppNotification } from '@/domain/types';
 import { formatRelative } from '@/domain/calendar';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { selectUnreadNotificationCount } from '@/state/selectors';
 import { cn } from '@/lib/cn';
 import { Button } from '@/components/ui/button';

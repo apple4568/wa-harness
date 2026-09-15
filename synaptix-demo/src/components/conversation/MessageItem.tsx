@@ -4,14 +4,14 @@ import { memo } from 'react';
 import type { Customer, DeliveryState, Message } from '@/domain/types';
 import { formatDate, formatTime } from '@/domain/calendar';
 import { STAFF_BY_ROLE } from '@/data/staff';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { DELIVERY_LABEL } from '@/lib/labels';
 import { cn } from '@/lib/cn';
 import { NodeGlyph } from '@/components/icons/channels';
 import { Badge } from '@/components/ui/badge';
 import { Tooltip } from '@/components/ui/tooltip';
 import { SourcesChip } from './SourcesChip';
-import { useTranslationToggle } from './translationToggle';
+import { useTranslationToggle } from './translationContext';
 
 const DELIVERY_ICON: Record<DeliveryState, typeof Check> = { sending: Clock, sent: Check, delivered: CheckCheck, failed: CircleAlert };
 

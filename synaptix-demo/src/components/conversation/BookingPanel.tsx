@@ -2,7 +2,7 @@ import { CalendarDays, Check, LoaderCircle, RefreshCw, Send, TriangleAlert, X } 
 import { useState, type ReactNode } from 'react';
 import type { Appointment, BookingStage, ClinicSlot, Conversation, Customer, Message } from '@/domain/types';
 import { formatDate, formatDateTime, formatTime } from '@/domain/calendar';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { selectAppointmentForConversation, selectCurrentRequest, selectPendingRequest, selectSlots } from '@/state/selectors';
 import { nextAvailableSlots, nextRequestId } from '@/lib/booking';
 import { DELIVERY_LABEL } from '@/lib/labels';

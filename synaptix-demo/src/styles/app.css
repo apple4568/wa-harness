@@ -194,7 +194,7 @@
   .presenter__step {
     display: none;
   }
-  .demo-chip span {
+  .demo-chip__more {
     display: none;
   }
   .presenter__clock-text {
@@ -531,6 +531,8 @@
   text-overflow: ellipsis;
   min-width: 0;
   flex: 0 1 auto;
+  max-width: 68%;
+  flex-shrink: 1;
 }
 .row.is-unread .row__name {
   font-weight: 600;
@@ -542,7 +544,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
-  flex: 1 1 auto;
+  flex: 1 1 0px;
+  flex-shrink: 20;
 }
 .row__time {
   margin-left: auto;
@@ -1276,10 +1279,12 @@
   object-fit: cover;
 }
 .photo-pick__title {
+  display: block;
   font-size: var(--fs-body);
   font-weight: 500;
 }
 .photo-pick__usage {
+  display: block;
   font-size: var(--fs-label);
   color: var(--text-muted);
   margin-top: 1px;

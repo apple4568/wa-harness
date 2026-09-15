@@ -1,8 +1,22 @@
+import { WorkingHoursSection } from './WorkingHoursSection';
+import { AssistantSection, ConnectionsSection, EscalationSection } from './SettingsSections';
+import '@/styles/views.css';
+
 export function SettingsView() {
   return (
-    <section className="view view--placeholder" data-testid="view-settings">
-      <h1 className="view__title">Settings</h1>
-      <p className="meta">Working hours, escalation and channel connections · phase 2</p>
+    <section className="view st" data-testid="settings-view" aria-label="Settings">
+      <div className="st__col">
+        <header className="st__heading">
+          <h1 className="st__title">Settings</h1>
+          <p className="st__subtitle">Working hours, escalation, connections and the assistant — all simulated for this demo.</p>
+        </header>
+        <WorkingHoursSection />
+        <EscalationSection />
+        <ConnectionsSection />
+        <AssistantSection />
+      </div>
     </section>
   );
 }
+
+export default SettingsView;

@@ -1,5 +1,5 @@
 import { BookOpen, Image } from 'lucide-react';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { formatDate } from '@/domain/calendar';
 import { staffName } from '@/lib/labels';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';

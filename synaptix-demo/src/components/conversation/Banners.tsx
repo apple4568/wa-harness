@@ -2,7 +2,7 @@ import { Clock, Hand, TriangleAlert, UserRound } from 'lucide-react';
 import type { Conversation } from '@/domain/types';
 import { formatDateTime, formatTime } from '@/domain/calendar';
 import { STAFF_BY_ROLE } from '@/data/staff';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { selectClinicOpen, selectNextOpening } from '@/state/selectors';
 import { Button } from '@/components/ui/button';
 

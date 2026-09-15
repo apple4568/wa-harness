@@ -1,7 +1,7 @@
 import { Pause, Play, RotateCcw, SkipForward, Undo2 } from 'lucide-react';
 import type { DemoMode, Role, ScenarioId } from '@/domain/types';
-import { formatDateTime } from '@/domain/calendar';
-import { useDemo, usePlayer } from '@/lib/store';
+import { formatDate, formatDateTime, formatTime } from '@/domain/calendar';
+import { useDemo, usePlayer } from '@/state/store';
 import { selectClinicOpen } from '@/state/selectors';
 import { SynaptixSymbol } from '@/components/icons/channels';
 import { Button } from '@/components/ui/button';
@@ -44,7 +44,7 @@ export function PresenterBar() {
         </Tabs>
 
         <Select value={player.scenario?.id ?? ''} onValueChange={(id) => player.start(id as ScenarioId)}>
-          <SelectTrigger onInk aria-label="Scenario" data-testid="scenario-select" style={{ width: 220 }}>
+          <SelectTrigger onInk aria-label="Scenario" data-testid="scenario-select" style={{ width: 176 }}>
             <SelectValue placeholder="Choose a scenario" />
           </SelectTrigger>
           <SelectContent>
@@ -84,7 +84,7 @@ export function PresenterBar() {
           <Tooltip content="Reset all demo data">
             <Button variant="on-ink" size="sm" aria-label="Reset all" data-testid="btn-reset" onClick={player.resetAll}>
               <Undo2 />
-              Reset all
+              <span className="presenter__reset-text">Reset all</span>
             </Button>
           </Tooltip>
         </div>
@@ -115,17 +115,23 @@ export function PresenterBar() {
       </div>
 
       <div className="presenter__right">
-        <span className="presenter__clock" data-testid="clock-label" title={`Clinic time (Asia/Seoul) · ${formatDateTime(state.clock)} · ${open ? 'Open' : 'Closed'}`}>
-          <Dot tone={open ? 'mint' : 'neutral'} />
-          <span className="presenter__clock-text">
-            Clinic time · <strong>{formatDateTime(state.clock)}</strong> · {open ? 'Open' : 'Closed'}
+        <div className="presenter__stack" title={`Clinic time (Asia/Seoul) · ${formatDateTime(state.clock)} · ${open ? 'Open' : 'Closed'}`}>
+          <span className="presenter__stack-label">Clinic time</span>
+          <span className="presenter__clock" data-testid="clock-label">
+            <Dot tone={open ? 'mint' : 'neutral'} />
+            <span className="presenter__clock-text">
+              <strong>
+                {formatDate(state.clock)} {formatTime(state.clock)}
+              </strong>{' '}
+              · {open ? 'Open' : 'Closed'}
+            </span>
           </span>
-        </span>
+        </div>
 
         <span className="presenter__divider" aria-hidden="true" />
 
-        <div className="presenter__role">
-          <span className="presenter__role-label">Simulated role</span>
+        <div className="presenter__stack presenter__role">
+          <span className="presenter__stack-label">Simulated role</span>
           <Tabs value={state.role} onValueChange={(v) => dispatch({ type: 'SET_ROLE', role: v as Role })} onInk data-testid="role-switch">
             <TabsList aria-label="Simulated role">
               <TabsTrigger value="staff">Staff</TabsTrigger>
@@ -136,7 +142,9 @@ export function PresenterBar() {
 
         <span className="demo-chip" data-testid="demo-chip" title="Every integration in this demo (channels, CRM, assistant) is simulated in-process.">
           <Dot tone="mint" />
-          <span>Demo · simulated integrations</span>
+          <span>
+            Demo<span className="demo-chip__more"> · simulated integrations</span>
+          </span>
         </span>
       </div>
     </header>

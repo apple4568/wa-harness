@@ -1,8 +1,8 @@
 import { Hand, Send } from 'lucide-react';
-import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
+import { useRef, useState, type KeyboardEvent } from 'react';
 import type { Conversation } from '@/domain/types';
 import { STAFF_BY_ROLE } from '@/data/staff';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { cn } from '@/lib/cn';
 import { Button } from '@/components/ui/button';
 import { Kbd } from '@/components/ui/kbd';
@@ -13,13 +13,15 @@ export function Composer({ conversation: conv }: { conversation: Conversation })
   const { state, dispatch } = useDemo();
   const me = STAFF_BY_ROLE[state.role];
   const [text, setText] = useState('');
+  const [draftFor, setDraftFor] = useState(conv.id);
   const ref = useRef<HTMLTextAreaElement>(null);
   const canReply = conv.ownership === 'human';
 
-  // Drafts are per conversation; clear when switching.
-  useEffect(() => {
+  // Drafts are per conversation; reset (during render) when the conversation changes.
+  if (draftFor !== conv.id) {
+    setDraftFor(conv.id);
     setText('');
-  }, [conv.id]);
+  }
 
   const send = (photoId?: string) => {
     const trimmed = text.trim();

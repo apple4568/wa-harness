@@ -1,4 +1,4 @@
-import { DemoProvider, useDemo } from '@/lib/store';
+import { DemoProvider, useDemo } from '@/state/store';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { AppShell } from '@/components/layout/AppShell';
 import { InboxView } from '@/components/inbox/InboxView';

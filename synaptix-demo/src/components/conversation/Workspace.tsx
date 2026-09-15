@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { selectCustomer, selectSelectedConversation } from '@/state/selectors';
 import { ThreadHeader } from './ThreadHeader';
 import { OwnershipBanner, AfterHoursBanner } from './Banners';

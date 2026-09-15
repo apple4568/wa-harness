@@ -1,6 +1,6 @@
 import { Image } from 'lucide-react';
 import { useState } from 'react';
-import { useDemo } from '@/lib/store';
+import { useDemo } from '@/state/store';
 import { selectApprovedPhotos } from '@/state/selectors';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
