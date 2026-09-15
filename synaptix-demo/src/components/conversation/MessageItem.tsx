@@ -47,6 +47,9 @@ export const MessageItem = memo(function MessageItem({ message: m, customer, isN
     (m.author === 'customer' || m.author === 'assistant' || m.translatedFromKo) && m.translationKo && showKo ? m.translationKo : undefined;
 
   let body: React.ReactNode = null;
+  /** Staff-only detail shown under the bubble. The bubble itself must contain
+   *  exactly what the customer received — nothing else. */
+  let aside: React.ReactNode = null;
   switch (m.kind) {
     case 'photo': {
       const k = m.photoId ? state.knowledge[m.photoId] : undefined;
@@ -89,25 +92,31 @@ export const MessageItem = memo(function MessageItem({ message: m, customer, isN
     case 'slot_offer': {
       const conv = state.conversations[m.conversationId];
       const selected = conv?.booking.selectedSlotId;
+      // The customer receives the numbered times as plain text — that is the whole
+      // message, and it is what makes one flow work on every channel. These chips are
+      // the staff-side view of the same slots, so they live outside the bubble.
       body = (
         <div className="msg__bubble" lang={lang}>
           {m.text}
-          <div className="slot-offer" lang="en">
-            {(m.slotIds ?? []).map((id) => {
-              const s = state.slots[id];
-              if (!s) return null;
-              const isSel = id === selected;
-              return (
-                <div key={id} className={cn('slot-offer__item', isSel && 'is-selected')} data-testid="offered-slot" data-slot-id={id} data-selected={isSel}>
-                  {isSel ? <Check /> : <Clock />}
-                  <span>
-                    {formatDate(s.startsAt)} · {formatTime(s.startsAt)}
-                  </span>
-                  <span className="slot-offer__room">{s.durationMin} min</span>
-                </div>
-              );
-            })}
-          </div>
+        </div>
+      );
+      aside = (
+        <div className="slot-offer" lang="en" data-testid="slot-offer">
+          <span className="slot-offer__tag">Offered · staff view</span>
+          {(m.slotIds ?? []).map((id) => {
+            const s = state.slots[id];
+            if (!s) return null;
+            const isSel = id === selected;
+            return (
+              <div key={id} className={cn('slot-offer__item', isSel && 'is-selected')} data-testid="offered-slot" data-slot-id={id} data-selected={isSel}>
+                {isSel ? <Check /> : <Clock />}
+                <span>
+                  {formatDate(s.startsAt)} · {formatTime(s.startsAt)}
+                </span>
+                <span className="slot-offer__room">{s.durationMin} min</span>
+              </div>
+            );
+          })}
         </div>
       );
       break;
@@ -179,6 +188,7 @@ export const MessageItem = memo(function MessageItem({ message: m, customer, isN
           <span>{translation}</span>
         </div>
       ) : null}
+      {aside}
       <div className={cn('msg__foot', out && 'msg__foot--out')}>
         <span>{formatTime(m.at)}</span>
         {out ? <DeliveryTick delivery={m.delivery} /> : null}

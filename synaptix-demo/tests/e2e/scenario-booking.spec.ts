@@ -76,6 +76,32 @@ test.describe('scenario 1 · Instagram inquiry → confirmed booking', () => {
     await expect(page.getByTestId('step-label')).toContainText('Complete');
   });
 
+  test('the bubble holds only what was sent; the slot chips are staff-side', async ({ page }) => {
+    await gotoDemo(page, { scenario: 'inquiry-to-booking' });
+    await playUntilStep(page, 'offer-slots');
+
+    const slotMsg = page.locator('[data-message-id="m-misaki-05"]');
+    await expect(slotMsg).toBeVisible();
+
+    // The customer received numbered plain text — that is the entire message.
+    const bubble = slotMsg.locator('.msg__bubble');
+    await expect(bubble).toContainText('① 9月17日(木) 14:00');
+    // ...and nothing else. No English date chips inside the bubble.
+    await expect(bubble.locator('[data-testid="offered-slot"]')).toHaveCount(0);
+    await expect(bubble).not.toContainText('Thu 17 Sep');
+
+    // The chips exist, outside the bubble, as the staff-side view.
+    const aside = slotMsg.getByTestId('slot-offer');
+    await expect(aside).toBeVisible();
+    await expect(aside.locator('[data-testid="offered-slot"]')).toHaveCount(3);
+    await expect(aside).toContainText('Thu 17 Sep');
+
+    // Selecting is reflected there, which is why the chips earn their place.
+    await playUntilStep(page, 'picks-slot');
+    await expect(aside.locator('[data-selected="true"]')).toHaveCount(1);
+    await expect(aside.locator('[data-slot-id="2026-09-17T14:00"]')).toHaveAttribute('data-selected', 'true');
+  });
+
   test('the customer arrives as a handle and is identified only when she gives her name', async ({ page }) => {
     await gotoDemo(page, { scenario: 'inquiry-to-booking' });
     await playUntilStep(page, 'inquiry-arrives');

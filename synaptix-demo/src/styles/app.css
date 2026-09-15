@@ -1040,11 +1040,25 @@
 }
 
 /* Structured message content */
+/* Staff-side view of the slots that went out as numbered plain text. It sits
+   OUTSIDE the bubble and borrows the translation block's left rule, so the rule
+   holds everywhere: inside a bubble is what the customer received, outside it is
+   for staff only. */
 .slot-offer {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-top: 6px;
+  margin-top: 2px;
+  padding: 6px 10px 6px 8px;
+  border-left: 2px solid var(--ink-200);
+  max-width: 100%;
+}
+.slot-offer__tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 2px;
 }
 .slot-offer__item {
   display: flex;
@@ -1073,9 +1087,13 @@
 }
 .slot-offer__room {
   margin-left: auto;
+  padding-left: 14px;
   font-family: var(--font-ui);
   font-size: var(--fs-label);
   color: var(--text-muted);
+}
+.slot-offer__item {
+  min-width: 232px;
 }
 
 .booking-card {

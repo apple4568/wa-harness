@@ -96,8 +96,13 @@ Customer attachments (`kind: 'customer_attachment'`) use `/photos/customer-attac
   language and the Korean original in `translationKo`, flagged `translatedFromKo`. So `Message.text` is *always* what was
   sent to the customer, whoever wrote it.
 - Interactive elements are **never** platform buttons. Slot offers go out as numbered plain text (① ② ③) and the customer
-  replies in words; the chips in the staff UI are a rendering of that text. This is what makes one flow work unchanged on
-  Instagram, WhatsApp, LINE and WeChat without per-platform interactive templates.
+  replies in words. This is what makes one flow work unchanged on Instagram, WhatsApp, LINE and WeChat without
+  per-platform interactive templates.
+- **Inside a bubble is exactly what the customer received; everything outside it is staff-only.** No exceptions — the
+  Korean translation, the sources chip, the review and translated markers, and the offered-slot chips
+  (`Offered · staff view`) all sit outside `.msg__bubble`. A staff-side rendering inside the bubble reads as something we
+  sent, which is how English date chips ended up looking like they were mailed to a Japanese customer. Locked by a test
+  in `tests/e2e/scenario-booking.spec.ts`.
 - Language is surfaced as a readable, colour-coded chip (`LANGUAGE_SHORT` + `[data-lang]`), not a raw IETF subtag.
   Simplified and Traditional Chinese are deliberately distinct: sending the wrong script reads as careless.
 
