@@ -69,20 +69,33 @@ booking cannot touch the CRM.
 
 > In the next 90 days, if this was achieved, he would be likely to move on.
 
-So: a **90-day window**, with the Instagram DM channel as the pass/fail criterion.
+"This" is **both halves, together**: automating the Instagram DM channel **and** the bot being
+able to read and write Vegas CRM automatically. Confirmed after the meeting — the CRM half is part
+of the condition, not a nice-to-have.
+
+So: a **90-day window**, and the pass/fail criterion **includes the one capability we do not
+currently have access to.** See §7.
 
 ## 7. Risks and open questions
 
-- **Vegas CRM read/write is the one item we currently cannot deliver.** It is gated behind a
-  partnership that a competing AI vendor already holds. Before committing to it in a 90-day scope
-  we need one of: (a) the clinic sponsoring/requesting API access on our behalf as their customer,
-  (b) a partnership approach to Vegas directly, or (c) an agreed interim design that does **not**
-  depend on the CRM API.
-- Worth noting the interim design is close to their existing workflow: the bot handles DMs,
-  qualifies, and produces a structured booking record that the Korean employee confirms into
-  Vegas CRM — same last step they already perform, but with the backlog and the re-typing removed.
-  That also gives the **Taiwan broker a surface they are allowed to use**, which the CRM will
-  never be while they are abroad.
+- **CRITICAL PATH: Vegas CRM read/write is part of the 90-day condition, and it is the one item we
+  currently cannot deliver.** It is gated behind a partnership that a competing AI vendor already
+  holds. This is no longer a phase-2 item we can defer — the deal is contingent on it, so access
+  has to be resolved early, not late. Routes, in order of preference:
+  (a) the clinic requests API access for us as *their* vendor — the clinic is Vegas's customer and
+      has leverage we do not;
+  (b) we approach Vegas directly for partnership;
+  (c) we negotiate the definition of "read and write" down to something achievable (below).
+- **Fallback definition of done, if the API stays shut.** The interim design is close to their
+  existing workflow: the bot handles DMs, qualifies, and produces a structured booking record that
+  the Korean employee confirms into Vegas CRM — same last step they already perform, but with the
+  backlog and the re-typing removed. That also gives the **Taiwan broker a surface they are allowed
+  to use**, which the CRM will never be while they are abroad. This is worth demoing, but be honest
+  that it is *staff-confirmed write*, not automatic write — he asked for automatic, and if we ship
+  the fallback while implying we met the condition, that surfaces at exactly the wrong moment.
+- Timing risk: API/partnership decisions at a CRM vendor are not fast, and 90 days is not long.
+  Access should be pursued **in parallel with** building the Instagram side, starting now, rather
+  than after the DM work is proven.
 - Confirm the existing AI vendor's name and the exact scope of their contract — if it is
   calls-only, Instagram DM may be uncontested; if it is exclusive, that changes the deal.
 - Confirm "300+" is per month (stated both as a standing backlog and as a monthly figure) and get
@@ -93,14 +106,12 @@ So: a **90-day window**, with the Instagram DM channel as the pass/fail criterio
 
 ## 8. Next steps
 
-- [ ] Confirm the existing AI vendor's name and contract scope.
-- [ ] Establish whether Vegas CRM API access is obtainable via the clinic as customer.
+- [ ] **Ask the clinic to request Vegas CRM API access on our behalf, as their vendor.** Highest
+      priority — this gates the 90-day condition and has the longest lead time.
+- [ ] Confirm the existing AI vendor's name and contract scope — if it is calls-only, our
+      Instagram + CRM ask may not conflict with theirs; if it is exclusive, the CRM half may be
+      closed to us entirely and the deal needs re-scoping with him now, not in month three.
 - [ ] Get sample DMs (anonymised) to size the simple-vs-human split.
-- [ ] Draft a 90-day scope for the Instagram DM channel that stands on its own without the CRM API,
-      with CRM read/write as a phase 2 conditional on access.
-
----
-
-> **Note:** the debrief ended mid-sentence — _"He said if I were to automate the instagram dm
-> channel +"_ — so there is at least one more condition or ask from the close of the meeting that
-> is not captured here. To be filled in.
+- [ ] Draft the 90-day scope in two tracks: Instagram DM automation (we control this, can ship it)
+      and CRM read/write (blocked on access). Agree with him up front what happens to the deal if
+      track 2 stays blocked through no fault of ours.

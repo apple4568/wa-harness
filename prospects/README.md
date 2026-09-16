@@ -7,4 +7,5 @@ Notes are written from debriefs, not transcripts — anything not directly confi
 by the prospect is marked _(unverified)_.
 
 - `midam-clinic/` — aesthetic clinic, Taiwanese patient base, Instagram DM inbound.
-  Discovery 2026-09-16; 90-day window; blocked item is Vegas CRM API access.
+  Discovery 2026-09-16; 90-day window covering IG DM automation AND automatic Vegas CRM
+  read/write — the CRM half is blocked on partnership-only API access.
