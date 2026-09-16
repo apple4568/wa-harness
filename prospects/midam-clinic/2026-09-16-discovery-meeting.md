@@ -44,6 +44,16 @@ Two hand-offs are doing all the damage: the DM backlog at the front, and the
 **manual re-entry by a Korean employee** at the back because the person who actually took the
 booking cannot touch the CRM.
 
+## 3b. Legal flag — raised after the meeting, not during
+
+The Taiwan manager is described as "essentially a broker". Under 의료법 제27조 제3항 and
+의료해외진출법 that arrangement carries criminal exposure **for the clinic as well as the
+broker** if the person is unregistered or paid per patient. This has to be established
+before we design anything around that workflow.
+
+→ See `deal_risks.md` R1 for the statutes, the 강남언니 precedent and how to raise it with
+the 원장 as a service rather than an accusation.
+
 ## 4. Systems / constraints
 
 | Item | Status |
@@ -115,3 +125,18 @@ currently have access to.** See §7.
 - [ ] Draft the 90-day scope in two tracks: Instagram DM automation (we control this, can ship it)
       and CRM read/write (blocked on access). Agree with him up front what happens to the deal if
       track 2 stays blocked through no fault of ours.
+
+---
+
+## 9. Related files
+
+- `deal_risks.md` — broker exposure (R1), flat-fee pricing requirement (R2), Vegas
+  dependency (R3), competitive positioning (R4), regulated-message spec (R5),
+  single-prospect risk (R6). **Read before the next contact with this account.**
+- `2026-09-16-vegas-crm-outreach.md` — Vegas call outcome, email sent, the
+  customer-request template for Midam to send.
+- `resources_plan.md` — the follow-up materials promised to the 원장.
+- `../../gtm/clinic_sales_playbook.md` — who buys (실장 → 원장), the competitive floor,
+  the mystery-shop wedge, EMR-integration-as-distribution.
+- `../../gtm/legal_pricing_constraints.md` — pricing model and regulated messaging.
+- `../../gtm/scripts_ko.md` — Korean scripts (walk-in, KakaoTalk follow-up, cold email).
