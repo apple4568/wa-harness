@@ -9,3 +9,4 @@ Research, strategy spec, page content, and build logs behind the Figma file
 - `brand/spec/build_log.md` — Figma variable / style / component ids created in the file
 - `brand/exports/` — SVG (pure paths) and PNG logo exports, size-test contact sheet, iteration notes
 - `brand/spec/logo_geometry.md` — final symbol / wordmark path data and lockup math (used to recreate native vectors in Figma)
+- `prospects/` — prospect meeting logs and account notes
