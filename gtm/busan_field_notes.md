@@ -50,6 +50,44 @@ every rejection still pays:
 Success for the day = 20–30 names and a channel map, not a meeting. Leave in 45
 seconds. Never say 유치.
 
+## The formal procedure that actually exists
+
+There is **no vendor-meeting intake process at 의원급**. 병원급 hospitals have a 기획팀
+or 원무과 that accepts a formal 공문/제안서; a 의원 has no such function, no vendor
+portal, no form. Stop looking for that door — it does not exist, which is exactly what
+"she only meets people she wants to meet" means.
+
+What does exist is membership in the bodies the 원장 already belongs to. You do not
+request a meeting; you join the room she is already in.
+
+| Body | How to get in | Contact |
+|---|---|---|
+| **(사)서면메디컬스트리트 의료관광협의회** — ~100 clinics + ~270 beauty businesses in 서면; member classes include 의료기관 **and** 유치기관/관련업체 | Ask the centre about 회원 가입 and upcoming 협의회 행사 | **부산의료관광센터 051-818-1320 / 1330**, 09:00–18:00 |
+| 부산진구 의료관광 (서면메디컬스트리트 사업) | 참여기관 등록 | 051-605-4526 · busanjin.go.kr/meditour |
+| (사)대한의료관광진흥협회 | 기업회원 가입, 연회비 | ktpa.or.kr |
+| (사)한국의료관광협회 | 정회원/기업회원, 연회비 | koreamedicaltour.org |
+| (사)K-의료관광협회 | 회원 가입 | imtca.or.kr |
+| 대한피부과의사회 학술대회 | 협력업체 부스 등록 (추계 신청 ~10-30) | see clinic_sales_playbook.md |
+
+Membership converts you from "stranger asking for access" to "member of the same
+body." That is the closest thing to a procedure that exists in this industry.
+
+## "She only meets people she wants to meet"
+
+Read it as a spec, not a wall. Three things put someone on that list, in order of
+reliability:
+
+1. **소개** — an introduction from someone she already trusts: another 원장, her 장비
+   영업사원, her 세무사, her 개원 컨설턴트, her 마케팅 대행사, a 학회 colleague. This is
+   the dominant B2B mechanism in Korean healthcare, not a shortcut around it.
+2. **Shared context** — 협의회, 학회, city programme. Peers meet peers.
+3. **She needs what you have.** "They do outbound, not inbound" means she is actively
+   hunting for foreign patients. Be visibly a source of that and the vector reverses.
+
+Note also: the person who decides who she *wants* to meet is usually the 실장. That
+sentence describes the 실장's job. Build the relationship with the filter rather than
+trying to route around it.
+
 ## Line on mystery shopping
 
 - **In person, posing as a patient: no.** It consumes a 상담실장's live time under a
@@ -66,4 +104,5 @@ seconds. Never say 유치.
 - [2025년 외국인 환자 유치 200만 돌파 (보건복지부)](https://www.mohw.go.kr/board.es?mid=a10503010100&bid=0027&act=view&list_no=1490280)
 - [부산진구 의료관광 인프라 (부산진구청)](https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000001101002001000)
 - [Seomyeon Medical Street](https://en.wikipedia.org/wiki/Seomyeon_Medical_Street)
+- [서면메디컬스트리트 (부산진구)](https://www.busanjin.go.kr/meditour/index.busanjin) · [(사)대한의료관광진흥협회 회원가입](https://ktpa.or.kr/106) · [한국의료관광협회](http://koreamedicaltour.org/main/main.php) · [K-의료관광협회](http://imtca.or.kr/)
 - [메디투어 부산](https://www.bsmeditour.go.kr/) · [부산관광공사](https://www.bto.or.kr/) · [부산국제의료관광컨벤션](https://bimtc.busan.com/html/main/main.php)
